@@ -27,7 +27,7 @@ class Constants {
 	 *
 	 * @var string
 	 */
-	const SPREADSHOP_VERSION = '1.7.0';
+	const SPREADSHOP_VERSION = '1.8.0';
 
 	/**
 	 * Every option this plugin owns.

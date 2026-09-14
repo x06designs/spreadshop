@@ -122,6 +122,17 @@ affiliated with, or supported by sprd.net AG or IronShark GmbH.
 
 ## Changelog
 
+### 1.8.0
+* The slug-based integration no longer presents itself as a 404 to SEO plugins. Yoast marked those pages noindex and Rank Math titled them "Page Not Found"; correcting the underlying request state fixes both, and any other SEO plugin, at once
+* Added a **Test connection** button, so a future change at Spreadshirt's end can be diagnosed on demand instead of surfacing as a shop that quietly stopped loading
+* A one-off empty response from Spreadshirt is retried once rather than reported as a broken shop
+* The shop's origins are announced in the page head, so the browser can open those connections while the shop client is still downloading. The image server alone takes about 300ms to reach and was previously not discovered until products began rendering
+* German translation
+* The slug page's title now keeps your site name instead of replacing the whole title with the slug
+* The settings error box is announced to screen readers, and the platform chooser is a properly labelled group
+* The admin menu icon is now a sharp SVG instead of a 20x20 bitmap
+* No inline JavaScript remains in the admin screen
+
 ### 1.7.0
 * Fixed shop connection failing with "Could not reach Spreadshirt": Spreadshirt's edge rejects requests that carry no browser-style User-Agent and no Accept-Language header
 * Deactivating the plugin no longer deletes your configuration — settings are now removed on uninstall only

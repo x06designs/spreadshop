@@ -3,7 +3,7 @@
 # This file is distributed under the same licence as the Spreadshop plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Spreadshop 1.7.0\n"
+"Project-Id-Version: Spreadshop 1.8.0\n"
 "Report-Msgid-Bugs-To: https://github.com/x06designs/spreadshop/issues\n"
 "PO-Revision-Date: 2026-09-14 00:00+0000\n"
 "Last-Translator: X-06 Designs\n"
@@ -151,172 +151,172 @@ msgstr "Shop-URL-Pfad"
 msgid "Save Changes"
 msgstr "Änderungen speichern"
 
-#: includes/Admin/ConnectTab.php:114
+#: includes/Admin/ConnectTab.php:121
 msgid "Connect your Shop"
 msgstr "Shop verbinden"
 
-#: includes/Admin/ConnectTab.php:115
+#: includes/Admin/ConnectTab.php:122
 msgid "Please conclude the initial shop-linking step outlined below. Instructions on how to embed your linked shop will follow."
 msgstr "Führe zuerst die unten beschriebene Verknüpfung durch. Wie du den verbundenen Shop einbindest, erfährst du danach."
 
-#: includes/Admin/ConnectTab.php:121
+#: includes/Admin/ConnectTab.php:128
 msgid "Shop Name or ID"
 msgstr "Shop-Name oder ID"
 
-#: includes/Admin/ConnectTab.php:128
+#: includes/Admin/ConnectTab.php:135
 msgid "ERROR:"
 msgstr "FEHLER:"
 
-#: includes/Admin/ConnectTab.php:135
+#: includes/Admin/ConnectTab.php:142
 msgid "Enter your Spreadshop's numeric ID (found in the Partner Area) or name."
 msgstr "Trage die numerische ID deines Spreadshops (zu finden im Partnerbereich) oder seinen Namen ein."
 
-#: includes/Admin/ConnectTab.php:136
+#: includes/Admin/ConnectTab.php:143
 msgid "The name is visible in your shop's url, for example:"
 msgstr "Der Name steht in der URL deines Shops, zum Beispiel:"
 
-#: includes/Admin/ConnectTab.php:143
+#: includes/Admin/ConnectTab.php:150
 #: includes/Admin/Frame.php:38
 msgid "Connect"
 msgstr "Verbinden"
 
-#: includes/Admin/ConnectTab.php:147
+#: includes/Admin/ConnectTab.php:154
 msgid "No shop yet?"
 msgstr "Noch kein Shop?"
 
-#: includes/Admin/ConnectTab.php:148
+#: includes/Admin/ConnectTab.php:155
 msgid "Register now!"
 msgstr "Jetzt registrieren!"
 
-#: includes/Admin/ConnectTab.php:165
+#: includes/Admin/ConnectTab.php:172
 msgid "Confirm the Connection"
 msgstr "Verbindung bestätigen"
 
-#: includes/Admin/ConnectTab.php:172
-#: includes/Admin/ConnectTab.php:236
-#: includes/Admin/ConnectTab.php:322
+#: includes/Admin/ConnectTab.php:179
+#: includes/Admin/ConnectTab.php:243
+#: includes/Admin/ConnectTab.php:329
 msgid "Platform"
 msgstr "Plattform"
 
-#: includes/Admin/ConnectTab.php:175
+#: includes/Admin/ConnectTab.php:182
 msgid "We found shops matching your criteria on both platforms. Which one do you want to link?"
 msgstr "Auf beiden Plattformen wurde ein passender Shop gefunden. Welchen möchtest du verknüpfen?"
 
 #. translators: %s: shop id and name, for example 1376884 (Stechmuecke).
-#: includes/Admin/ConnectTab.php:182
+#: includes/Admin/ConnectTab.php:189
 #, php-format
 msgid "Shop %s on the European platform"
 msgstr "Shop %s auf der europäischen Plattform"
 
 #. translators: %s: shop id and name, for example 1376884 (Stechmuecke).
-#: includes/Admin/ConnectTab.php:194
+#: includes/Admin/ConnectTab.php:201
 #, php-format
 msgid "Shop %s on the North American platform"
 msgstr "Shop %s auf der nordamerikanischen Plattform"
 
-#: includes/Admin/ConnectTab.php:228
-#: includes/Admin/ConnectTab.php:326
+#: includes/Admin/ConnectTab.php:235
+#: includes/Admin/ConnectTab.php:333
 msgid "Shop ID"
 msgstr "Shop-ID"
 
-#: includes/Admin/ConnectTab.php:232
+#: includes/Admin/ConnectTab.php:239
 msgid "Shop Name"
 msgstr "Shop-Name"
 
-#: includes/Admin/ConnectTab.php:240
-#: includes/Admin/ConnectTab.php:330
+#: includes/Admin/ConnectTab.php:247
+#: includes/Admin/ConnectTab.php:337
 msgid "Locale"
 msgstr "Sprache und Region"
 
-#: includes/Admin/ConnectTab.php:246
+#: includes/Admin/ConnectTab.php:253
 msgid "Confirm Connection"
 msgstr "Verbindung bestätigen"
 
-#: includes/Admin/ConnectTab.php:275
+#: includes/Admin/ConnectTab.php:282
 msgid "Influences language, currency and units of measurement."
 msgstr "Bestimmt Sprache, Währung und Maßeinheiten."
 
-#: includes/Admin/ConnectTab.php:291
+#: includes/Admin/ConnectTab.php:298
 msgid "Connected"
 msgstr "Verbunden"
 
 #. translators: %s: the [spreadshop] shortcode, shown in bold.
-#: includes/Admin/ConnectTab.php:301
+#: includes/Admin/ConnectTab.php:308
 #, php-format
 msgid "You can now embed your Spreadshop anywhere using the shortcode %s!"
 msgstr "Du kannst deinen Spreadshop jetzt überall mit dem Shortcode %s einbinden!"
 
-#: includes/Admin/ConnectTab.php:307
+#: includes/Admin/ConnectTab.php:314
 msgid "If you want a specific page of your shop to show, you can pass a deeplink parameter."
 msgstr "Wenn eine bestimmte Seite deines Shops erscheinen soll, kannst du einen Deeplink-Parameter übergeben."
 
 #. translators: 1: an example shop url, 2: the matching shortcode, shown in bold.
-#: includes/Admin/ConnectTab.php:311
+#: includes/Admin/ConnectTab.php:318
 #, php-format
 msgid "For example, to show %1$s use the short code %2$s."
 msgstr "Um zum Beispiel %1$s anzuzeigen, verwende den Shortcode %2$s."
 
-#: includes/Admin/ConnectTab.php:336
+#: includes/Admin/ConnectTab.php:343
 msgid "Disconnect"
 msgstr "Verbindung trennen"
 
-#: includes/Admin/ConnectTab.php:341
+#: includes/Admin/ConnectTab.php:348
 msgid "Not sure the shop is still reachable? Ask Spreadshirt right now."
 msgstr "Nicht sicher, ob der Shop noch erreichbar ist? Frag Spreadshirt sofort."
 
-#: includes/Admin/ConnectTab.php:343
+#: includes/Admin/ConnectTab.php:350
 msgid "Test connection"
 msgstr "Verbindung testen"
 
-#: includes/Admin/ConnectTab.php:362
+#: includes/Admin/ConnectTab.php:369
 msgid "You left the field empty!"
 msgstr "Das Feld ist leer!"
 
-#: includes/Admin/ConnectTab.php:368
+#: includes/Admin/ConnectTab.php:375
 msgid "The input you provided is neither a valid shop ID nor name!"
 msgstr "Die Eingabe ist weder eine gültige Shop-ID noch ein gültiger Name!"
 
-#: includes/Admin/ConnectTab.php:383
+#: includes/Admin/ConnectTab.php:390
 msgid "Could not find any shop with this ID or name!"
 msgstr "Es wurde kein Shop mit dieser ID oder diesem Namen gefunden!"
 
 #. translators: %s: the underlying transport error reported by WordPress.
-#: includes/Admin/ConnectTab.php:412
+#: includes/Admin/ConnectTab.php:419
 #, php-format
 msgid "Could not reach Spreadshirt: %s"
 msgstr "Spreadshirt ist nicht erreichbar: %s"
 
-#: includes/Admin/ConnectTab.php:415
+#: includes/Admin/ConnectTab.php:422
 msgid "Spreadshirt refused the request (HTTP 403). This server's outgoing TLS stack is likely too old — setup needs PHP 8.1 or newer (OpenSSL 3)."
 msgstr "Spreadshirt hat die Anfrage abgelehnt (HTTP 403). Vermutlich ist der TLS-Stack dieses Servers zu alt — für die Einrichtung wird PHP 8.1 oder neuer benötigt (OpenSSL 3)."
 
 #. translators: %d: an HTTP status code, for example 500.
-#: includes/Admin/ConnectTab.php:418
+#: includes/Admin/ConnectTab.php:425
 #, php-format
 msgid "Spreadshirt answered with HTTP %d. Try again in a moment."
 msgstr "Spreadshirt hat mit HTTP %d geantwortet. Versuche es gleich noch einmal."
 
-#: includes/Admin/ConnectTab.php:420
+#: includes/Admin/ConnectTab.php:427
 msgid "Could not reach Spreadshirt! Try again."
 msgstr "Spreadshirt ist nicht erreichbar! Versuche es noch einmal."
 
-#: includes/Admin/ConnectTab.php:442
+#: includes/Admin/ConnectTab.php:449
 msgid "Connection works. Spreadshirt answered and the shop was found."
 msgstr "Die Verbindung funktioniert. Spreadshirt hat geantwortet und der Shop wurde gefunden."
 
-#: includes/Admin/ConnectTab.php:493
+#: includes/Admin/ConnectTab.php:500
 msgid "Invalid shop ID"
 msgstr "Ungültige Shop-ID"
 
-#: includes/Admin/ConnectTab.php:499
+#: includes/Admin/ConnectTab.php:506
 msgid "Invalid platform"
 msgstr "Ungültige Plattform"
 
-#: includes/Admin/ConnectTab.php:505
+#: includes/Admin/ConnectTab.php:512
 msgid "Invalid locale"
 msgstr "Ungültige Sprach- und Regionseinstellung"
 
-#: includes/Admin/ConnectTab.php:557
+#: includes/Admin/ConnectTab.php:575
 msgid "Spreadshirt returned a response this plugin could not read."
 msgstr "Spreadshirt hat eine Antwort gesendet, die dieses Plugin nicht lesen konnte."
 
