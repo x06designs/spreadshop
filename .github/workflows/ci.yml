@@ -18,7 +18,7 @@ jobs:
     name: Coding standards
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -34,7 +34,7 @@ jobs:
     name: Static analysis
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -55,7 +55,7 @@ jobs:
         # 8.1 is the declared floor; 8.4 is the newest release the plugin claims to run on.
         php: ['8.1', '8.4']
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -74,7 +74,7 @@ jobs:
     name: Dependency audit
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -92,13 +92,13 @@ jobs:
     name: Build the release artifact
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       # Proves the shipped tree is buildable and carries no development files. The script
       # fails if the two version declarations have drifted or a dev file has leaked in.
       - run: ./scripts/package-plugin.sh
 
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         with:
           name: spreadshop-plugin
           path: dist/*.zip
