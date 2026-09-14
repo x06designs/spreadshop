@@ -63,7 +63,7 @@ class SpreadshopAdminFrame {
 			</div>
 			<div class="sprd-links">
 				<?php echo wp_kses_post( $previewLink ); ?>
-				<a href="https://github.com/x-06-designs/spreadshop" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Read more in our FAQ >', 'spreadshop' ); ?></a>
+				<a href="https://github.com/x06designs/spreadshop" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Read more in our FAQ >', 'spreadshop' ); ?></a>
 			</div>
 		</div>
 		<?php

@@ -1,5 +1,5 @@
 {
-    "name": "x-06-designs/spreadshop",
+    "name": "x06designs/spreadshop",
     "description": "Development tooling for the Spreadshop WordPress plugin fork. The shippable plugin is the spreadshop/ directory; nothing here is distributed with it.",
     "license": "GPL-2.0-or-later",
     "require": {

@@ -174,7 +174,7 @@ class SpreadshopAdminAdvanced {
 					?>
 					<br/>
 					<?php esc_html_e( 'Alternatively, you can define a slug (url path) here to embed the Spreadshop.', 'spreadshop' ); ?><br/>
-					<a href="https://github.com/x-06-designs/spreadshop" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Read more in our FAQ >', 'spreadshop' ); ?></a>
+					<a href="https://github.com/x06designs/spreadshop" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Read more in our FAQ >', 'spreadshop' ); ?></a>
 				</p>
 
 				<table class="form-table">
