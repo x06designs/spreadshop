@@ -1,6 +1,6 @@
 # Spreadshop fork — modernization plan
 
-Status: **Phases 0, 1 and 2 done.** Phases 3 (tests) and 4 (packaging, CI) remain.
+Status: **Phases 0 to 3 done.** Phase 4 (packaging, CI) remains.
 
 Decisions taken at the goals gate:
 
@@ -132,10 +132,18 @@ is theatre. What is genuinely worth testing:
 - Embed config assembly from options
 
 Two scratch probes written during the repair (`connect-probe.php`, `failure-msg-test.php`)
-already cover the first three and should be folded into the suite rather than rewritten.
+covered the first three and were folded in rather than rewritten.
 
 What would be theatre: asserting `wp_remote_get()` was called, testing WordPress core
 behaviour, or mocking Spreadshirt so thoroughly the test only proves the mock.
+
+**Delivered:** 73 tests, 115 assertions, PHPUnit 9.6 + Brain Monkey, no WordPress required.
+Green on PHP 8.1 and 8.4. The suite was mutation-checked by reintroducing eight of the
+original defects one at a time; all eight were caught.
+
+The unit suite deliberately stops at the seam where WordPress begins. Anything past it --
+does the admin screen render, does an upgrade preserve a connection, does a block theme get
+its header -- is verified by running the plugin in a real WordPress, not by mocking one.
 
 ### Phase 4 — Packaging and CI
 

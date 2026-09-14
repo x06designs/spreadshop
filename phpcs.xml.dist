@@ -3,6 +3,7 @@
     <description>WordPress coding standards for the Spreadshop plugin fork.</description>
 
     <file>spreadshop</file>
+    <file>tests</file>
 
     <exclude-pattern>*/vendor/*</exclude-pattern>
     <exclude-pattern>*/node_modules/*</exclude-pattern>
@@ -38,6 +39,17 @@
             surrounding code reads left-to-right throughout. Excluded to keep one style.
         -->
         <exclude name="WordPress.PHP.YodaConditions"/>
+    </rule>
+
+    <!--
+        The unit suite runs without WordPress loaded, so the WP wrappers these sniffs point at
+        (wp_json_encode, wp_parse_url) do not exist there, and ABSPATH is WordPress's own name.
+    -->
+    <rule ref="WordPress.WP.AlternativeFunctions">
+        <exclude-pattern>tests/*</exclude-pattern>
+    </rule>
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+        <exclude-pattern>tests/*</exclude-pattern>
     </rule>
 
     <config name="testVersion" value="8.1-"/>
