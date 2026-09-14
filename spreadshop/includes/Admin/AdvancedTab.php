@@ -237,9 +237,14 @@ class AdvancedTab {
 	private static function handleUpdate() {
 		// phpcs:disable WordPress.Security.NonceVerification.Missing -- Verified in handle().
 		// wp_strip_all_tags rather than sanitize_text_field: both values are url fragments and
-		// sanitize_text_field would silently eat percent-encoded characters out of them.
-		$slug        = isset( $_POST['spreadshopSlug'] ) ? wp_strip_all_tags( wp_unslash( $_POST['spreadshopSlug'] ) ) : '';
-		$startToken  = isset( $_POST['spreadshopToken'] ) ? wp_strip_all_tags( wp_unslash( $_POST['spreadshopToken'] ) ) : '';
+		// sanitize_text_field would silently eat percent-encoded characters out of them. The
+		// is_string guard is for a posted array, which strip_tags() raises a TypeError on.
+		$slug        = isset( $_POST['spreadshopSlug'] ) && is_string( $_POST['spreadshopSlug'] )
+			? wp_strip_all_tags( wp_unslash( $_POST['spreadshopSlug'] ) )
+			: '';
+		$startToken  = isset( $_POST['spreadshopToken'] ) && is_string( $_POST['spreadshopToken'] )
+			? wp_strip_all_tags( wp_unslash( $_POST['spreadshopToken'] ) )
+			: '';
 		$optimizeUrl = isset( $_POST['spreadshopOptimizeUrl'] ) ? 1 : 0;
 		$metaData    = isset( $_POST['spreadshopMetadata'] ) ? 1 : 0;
 		$swipeMenu   = isset( $_POST['spreadshopSwipeMenu'] ) ? 1 : 0;

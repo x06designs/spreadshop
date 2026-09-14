@@ -69,6 +69,22 @@
         </properties>
     </rule>
 
+    <!--
+        The plugin's own sanitisers. sanitize_text_field strips percent-encoded octets, which
+        a slug or a deeplink needs to keep, so these exist and the sniff has to know them.
+    -->
+    <rule ref="WordPress.Security.ValidatedSanitizedInput">
+        <properties>
+            <property name="customSanitizingFunctions" type="array">
+                <element value="sanitizeUrlFragment"/>
+                <element value="sanitizeShopId"/>
+                <element value="sanitizePlatform"/>
+                <element value="sanitizeLocale"/>
+                <element value="sanitizeToggle"/>
+            </property>
+        </properties>
+    </rule>
+
     <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
         <properties>
             <property name="prefixes" type="array">

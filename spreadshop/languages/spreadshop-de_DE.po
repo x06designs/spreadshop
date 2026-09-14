@@ -3,7 +3,7 @@
 # This file is distributed under the same licence as the Spreadshop plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Spreadshop 1.8.0\n"
+"Project-Id-Version: Spreadshop 1.8.1\n"
 "Report-Msgid-Bugs-To: https://github.com/x06designs/spreadshop/issues\n"
 "PO-Revision-Date: 2026-09-14 00:00+0000\n"
 "Last-Translator: X-06 Designs\n"
@@ -300,23 +300,27 @@ msgstr "Spreadshirt hat mit HTTP %d geantwortet. Versuche es gleich noch einmal.
 msgid "Could not reach Spreadshirt! Try again."
 msgstr "Spreadshirt ist nicht erreichbar! Versuche es noch einmal."
 
-#: includes/Admin/ConnectTab.php:449
+#: includes/Admin/ConnectTab.php:454
+msgid "The stored shop details are not usable. Disconnect and connect the shop again."
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:466
 msgid "Connection works. Spreadshirt answered and the shop was found."
 msgstr "Die Verbindung funktioniert. Spreadshirt hat geantwortet und der Shop wurde gefunden."
 
-#: includes/Admin/ConnectTab.php:500
+#: includes/Admin/ConnectTab.php:517
 msgid "Invalid shop ID"
 msgstr "Ungültige Shop-ID"
 
-#: includes/Admin/ConnectTab.php:506
+#: includes/Admin/ConnectTab.php:523
 msgid "Invalid platform"
 msgstr "Ungültige Plattform"
 
-#: includes/Admin/ConnectTab.php:512
+#: includes/Admin/ConnectTab.php:529
 msgid "Invalid locale"
 msgstr "Ungültige Sprach- und Regionseinstellung"
 
-#: includes/Admin/ConnectTab.php:575
+#: includes/Admin/ConnectTab.php:592
 msgid "Spreadshirt returned a response this plugin could not read."
 msgstr "Spreadshirt hat eine Antwort gesendet, die dieses Plugin nicht lesen konnte."
 

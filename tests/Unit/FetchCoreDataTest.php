@@ -230,6 +230,55 @@ class FetchCoreDataTest extends PluginTestCase {
 	}
 
 	/**
+	 * Corrupt stored details stop the connection test before any request goes out.
+	 *
+	 * The stored shop id becomes the host the request is sent to, so a value carrying a
+	 * hostname would point the test at somewhere else entirely. The guard has to fire before
+	 * wp_remote_get, not after.
+	 *
+	 * @dataProvider unusableStoredDetailsProvider
+	 * @param string $shopId   Stored shop id.
+	 * @param string $platform Stored platform.
+	 * @return void
+	 */
+	public function testTheConnectionTestRefusesUnusableStoredDetails( $shopId, $platform ) {
+		Functions\when( 'get_option' )->alias(
+			static function ( $name ) use ( $shopId, $platform ) {
+				if ( 'spreadshopID' === $name ) {
+					return $shopId;
+				}
+				if ( 'spreadshopPlatform' === $name ) {
+					return $platform;
+				}
+				return false;
+			}
+		);
+		Functions\expect( 'wp_remote_get' )->never();
+
+		$method = new ReflectionMethod( ConnectTab::class, 'handleTestConnection' );
+		$method->setAccessible( true );
+		$result = $method->invoke( null );
+
+		$this->assertFalse( $result['testResult']['ok'] );
+		$this->assertStringContainsString( 'not usable', $result['testResult']['message'] );
+	}
+
+	/**
+	 * Stored values that must never be used to build a request.
+	 *
+	 * @return array<string, array{string, string}>
+	 */
+	public function unusableStoredDetailsProvider() {
+		return array(
+			'shop id carrying a host' => array( 'evil.example.com', 'EU' ),
+			'shop id with a path'     => array( 'evil.example.com/x?', 'EU' ),
+			'empty shop id'           => array( '', 'EU' ),
+			'unknown platform'        => array( '1376884', 'ZZ' ),
+			'empty platform'          => array( '1376884', '' ),
+		);
+	}
+
+	/**
 	 * Each platform is asked on its own domain.
 	 *
 	 * @dataProvider platformProvider
