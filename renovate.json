@@ -1,0 +1,59 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    ":dependencyDashboard"
+  ],
+  "timezone": "Europe/Berlin",
+  "schedule": ["before 6am on monday"],
+  "labels": ["dependencies"],
+  "prConcurrentLimit": 5,
+  "rangeStrategy": "bump",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on the first day of the month"]
+  },
+  "composer": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "description": "Composer here is development tooling only; nothing it installs is shipped in the plugin. CI runs lint, static analysis, the unit suite on two PHP versions, an audit and the packaging script, so a green patch or minor can land on its own.",
+      "matchManagers": ["composer"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "groupName": "composer patch+minor",
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    },
+    {
+      "description": "A major of phpcs, phpstan or phpunit changes what the gates accept. Isolated, and reviewed by a human.",
+      "matchManagers": ["composer"],
+      "matchUpdateTypes": ["major"],
+      "groupName": null,
+      "automerge": false,
+      "addLabels": ["major", "needs-regression"]
+    },
+    {
+      "description": "The workflow's pinned actions. Three of them had already gone stale enough for GitHub to warn about a deprecated Node runtime before anyone noticed; this is the manager that would have caught it.",
+      "matchManagers": ["github-actions"],
+      "groupName": "github actions",
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    },
+    {
+      "description": "A major of an action can change its inputs or its runner requirements.",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["major"],
+      "groupName": null,
+      "automerge": false,
+      "addLabels": ["major", "needs-regression"]
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "labels": ["security"],
+    "automerge": false
+  }
+}

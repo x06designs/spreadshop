@@ -437,8 +437,25 @@ class ConnectTab {
 	 * @return array<string, mixed> Render instructions for the connected view.
 	 */
 	private static function handleTestConnection() {
-		$shopId   = get_option( 'spreadshopID' );
-		$platform = get_option( 'spreadshopPlatform' );
+		$shopId   = Settings::sanitizeShopId( get_option( 'spreadshopID' ) );
+		$platform = Settings::sanitizePlatform( get_option( 'spreadshopPlatform' ) );
+
+		/*
+		 * The stored values decide the host this request goes to, so they are re-checked here
+		 * rather than trusted. They are written through validated forms, but the options API
+		 * is a second way in and a shop id carrying a hostname would point this somewhere else
+		 * entirely.
+		 */
+		if ( '' === $shopId || '' === $platform ) {
+			return array(
+				'page'       => 'connected',
+				'testResult' => array(
+					'ok'      => false,
+					'message' => __( 'The stored shop details are not usable. Disconnect and connect the shop again.', 'spreadshop' ),
+				),
+			);
+		}
+
 		$response = self::fetchCoreData( $shopId, $platform );
 
 		if ( 200 === $response['status'] ) {
