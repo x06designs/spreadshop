@@ -3,7 +3,7 @@
  * Plugin Name: Spreadshop (Maintained Fork)
  * Plugin URI: https://github.com/x06designs/spreadshop
  * Description: This plugin integrates a Spreadshirt Shop into WordPress. Community-maintained fork of the discontinued official plugin.
- * Version: 1.8.0
+ * Version: 1.8.1
  * Requires at least: 6.0
  * Requires PHP: 8.1
  * Text Domain: spreadshop

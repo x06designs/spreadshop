@@ -122,6 +122,11 @@ affiliated with, or supported by sprd.net AG or IronShark GmbH.
 
 ## Changelog
 
+### 1.8.1
+* Hardening: every setting is now cleaned on the way in whichever route wrote it. Registering an option also exposes it to WordPress's own settings handler, which does not pass through this plugin's forms, so their validation did not run on that path. A stored shop ID decides which host the shop is loaded from, so this matters most there
+* The connection test re-checks the stored shop details before contacting Spreadshirt rather than trusting what it reads back
+* Saving the Advanced tab no longer errors if a field arrives as an array instead of text
+
 ### 1.8.0
 * The slug-based integration no longer presents itself as a 404 to SEO plugins. Yoast marked those pages noindex and Rank Math titled them "Page Not Found"; correcting the underlying request state fixes both, and any other SEO plugin, at once
 * Added a **Test connection** button, so a future change at Spreadshirt's end can be diagnosed on demand instead of surfacing as a shop that quietly stopped loading
