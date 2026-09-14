@@ -1,0 +1,35 @@
+{
+    "name": "x-06-designs/spreadshop",
+    "description": "Development tooling for the Spreadshop WordPress plugin fork. The shippable plugin is the spreadshop/ directory; nothing here is distributed with it.",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3.1",
+        "phpcompatibility/phpcompatibility-wp": "^2.1",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "phpstan/phpstan": "^2.0",
+        "phpstan/extension-installer": "^1.4",
+        "szepeviktor/phpstan-wordpress": "^2.0",
+        "php-stubs/wordpress-stubs": "^6.6"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
+        },
+        "platform": {
+            "php": "8.1.0"
+        }
+    },
+    "scripts": {
+        "lint": "phpcs",
+        "fix": "phpcbf",
+        "phpstan": "phpstan analyse --memory-limit=512M",
+        "check": [
+            "@lint",
+            "@phpstan"
+        ]
+    }
+}

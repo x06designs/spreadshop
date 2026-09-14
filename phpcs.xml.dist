@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<ruleset name="Spreadshop">
+    <description>WordPress coding standards for the Spreadshop plugin fork.</description>
+
+    <file>spreadshop</file>
+
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/dist/*</exclude-pattern>
+
+    <arg name="extensions" value="php"/>
+    <arg name="colors"/>
+    <arg value="sp"/>
+    <arg name="parallel" value="8"/>
+
+    <rule ref="WordPress">
+        <!--
+            PSR-4 is not in play yet (see docs/plans/modernization.md, Phase 2), but the
+            upstream file names are already spreadshop-*.php rather than class-*.php, and
+            renaming them would change nothing a user can observe while churning the diff.
+        -->
+        <exclude name="WordPress.Files.FileName"/>
+
+        <!--
+            The naming sniffs below demand snake_case. This is a fork of a third-party
+            plugin written entirely in camelCase, and renaming is not merely churn:
+            register_uninstall_hook() persists the callback NAME in the uninstall_plugins
+            option, so renaming spreadshopDeleteSettings() silently breaks uninstall for
+            every site that activated an earlier version. add_menu_page() likewise stores
+            spreadshopAdminHandler as a string. House style applies to new code; this file
+            set follows the style it already has.
+        -->
+        <exclude name="WordPress.NamingConventions.ValidVariableName"/>
+        <exclude name="WordPress.NamingConventions.ValidFunctionName"/>
+
+        <!--
+            Yoda conditions are a readability convention, not a correctness one, and the
+            surrounding code reads left-to-right throughout. Excluded to keep one style.
+        -->
+        <exclude name="WordPress.PHP.YodaConditions"/>
+    </rule>
+
+    <config name="testVersion" value="8.1-"/>
+    <rule ref="PHPCompatibilityWP"/>
+
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array">
+                <element value="spreadshop"/>
+            </property>
+        </properties>
+    </rule>
+
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+        <properties>
+            <property name="prefixes" type="array">
+                <element value="spreadshop"/>
+                <element value="Spreadshop"/>
+                <element value="SPREADSHOP"/>
+            </property>
+        </properties>
+    </rule>
+</ruleset>
