@@ -78,6 +78,32 @@ Your connection settings are kept, so reactivating the plugin restores the embed
 3. Click "delete" on your Spreadshop plugin.
 
 
+== Development ==
+
+The plugin itself has no runtime dependencies and no build step: `spreadshop/` is exactly
+what ships. Everything below is development tooling and lives at the repository root, outside
+the plugin directory, so nothing has to be stripped before release.
+
+Requires PHP 8.1+ and Composer.
+
+    composer install
+
+    composer lint        # WordPress Coding Standards
+    composer fix         # auto-fix what phpcbf can
+    composer phpstan     # static analysis, level 6
+    composer test:unit   # unit suite, no WordPress required
+    composer check       # all three
+
+    ./scripts/package-plugin.sh   # -> dist/spreadshop/ and dist/spreadshop-<version>.zip
+
+The unit suite runs on Brain Monkey and needs no WordPress install. Anything that genuinely
+depends on WordPress -- the admin screens, upgrading in place, block-theme rendering, the SEO
+plugin interaction -- is verified by running the plugin in a real WordPress rather than by
+mocking one.
+
+CI runs lint, static analysis, the unit suite on PHP 8.1 and 8.4, `composer audit`, and the
+packaging script on every push and pull request.
+
 == Changelog ==
 ### 1.7.0
 * Fixed shop connection failing with "Could not reach Spreadshirt": Spreadshirt's edge rejects requests that carry no browser-style User-Agent and no Accept-Language header

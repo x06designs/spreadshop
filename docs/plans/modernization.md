@@ -1,6 +1,6 @@
 # Spreadshop fork — modernization plan
 
-Status: **Phases 0 to 3 done.** Phase 4 (packaging, CI) remains.
+Status: **Complete.** Phases 0 to 4 are done.
 
 Decisions taken at the goals gate:
 
