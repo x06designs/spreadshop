@@ -1,0 +1,320 @@
+# Copyright (C) 2026 X-06 Designs
+# This file is distributed under the GPL2.
+msgid ""
+msgstr ""
+"Project-Id-Version: Spreadshop (Maintained Fork) 1.7.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/src\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-14T13:52:26+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: spreadshop\n"
+
+#. Plugin Name of the plugin
+#: spreadshop.php
+msgid "Spreadshop (Maintained Fork)"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: spreadshop.php
+msgid "https://github.com/x06designs/spreadshop"
+msgstr ""
+
+#. Description of the plugin
+#: spreadshop.php
+msgid "This plugin integrates a Spreadshirt Shop into WordPress. Community-maintained fork of the discontinued official plugin."
+msgstr ""
+
+#. Author of the plugin
+#: spreadshop.php
+msgid "X-06 Designs"
+msgstr ""
+
+#. Author URI of the plugin
+#: spreadshop.php
+msgid "https://github.com/x06designs"
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:67
+msgid "Please connect your shop first before you deal with advanced settings."
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:93
+msgid "Start Token (Optional)"
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:100
+msgid "To show a specific page from your shop, enter the page url here. Only the text highlighted in the example below is necessary:"
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:105
+msgid "This is primarily useful for slug-based integrations (see below)."
+msgstr ""
+
+#. translators: %s: the deeplink= shortcode parameter, shown in bold.
+#: includes/Admin/AdvancedTab.php:109
+#, php-format
+msgid "When using the shortcode, the same effect can be achieved by using the %s parameter."
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:119
+msgid "Update Meta Data"
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:126
+msgid "Allow Spreadshop to update your site's head section"
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:129
+msgid "Spreadshop will update your site's title, description, seoIndex, as well as OpenGraph and Twitter Card tags."
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:136
+msgid "Load Spreadshop Fonts"
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:143
+msgid "Use Fonts from your Shop's Partner Area"
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:146
+msgid "If unchecked, the fonts from your WordPress theme will be used."
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:153
+msgid "Mobile Swipe Menu"
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:160
+msgid "Use Mobile Swipe Menu instead of Burger Menu"
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:163
+msgid "Check this option to avoid a second separate burger-menu from showing up on your page if your site already uses one."
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:170
+msgid "Alternative slug-based integration"
+msgstr ""
+
+#. translators: %s: the [spreadshop] shortcode, shown in bold.
+#: includes/Admin/AdvancedTab.php:175
+#, php-format
+msgid "The recommended way of embedding your Spreadshop is to use the %s short code."
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:180
+msgid "Alternatively, you can define a slug (url path) here to embed the Spreadshop."
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:181
+#: includes/Admin/Frame.php:68
+msgid "Read more in our FAQ >"
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:188
+msgid "Shop URL Path (Optional)"
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:194
+msgid "Define a URL path where you want your Spreadshop to show up on your WordPress website."
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:199
+msgid "Push State URLs"
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:206
+msgid "Optimize URL"
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:208
+msgid "Removes the hashbangs (as shown in the example below) from your URLs"
+msgstr ""
+
+#. translators: %s: the "Shop URL Path" setting name, shown in bold.
+#: includes/Admin/AdvancedTab.php:214
+#, php-format
+msgid "This only works when using the %s method instead of the shortcode."
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:215
+msgid "Shop URL Path"
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:223
+msgid "Save Changes"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:106
+msgid "Connect your Shop"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:107
+msgid "Please conclude the initial shop-linking step outlined below. Instructions on how to embed your linked shop will follow."
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:113
+msgid "Shop Name or ID"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:120
+msgid "ERROR:"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:127
+msgid "Enter your Spreadshop's numeric ID (found in the Partner Area) or name."
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:128
+msgid "The name is visible in your shop's url, for example:"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:135
+#: includes/Admin/Frame.php:38
+msgid "Connect"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:139
+msgid "No shop yet?"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:140
+msgid "Register now!"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:157
+msgid "Confirm the Connection"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:164
+#: includes/Admin/ConnectTab.php:228
+#: includes/Admin/ConnectTab.php:308
+msgid "Platform"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:166
+msgid "We found shops matching your criteria on both platforms. Which one do you want to link?"
+msgstr ""
+
+#. translators: %s: shop id and name, for example 1376884 (Stechmuecke).
+#: includes/Admin/ConnectTab.php:174
+#, php-format
+msgid "Shop %s on the European platform"
+msgstr ""
+
+#. translators: %s: shop id and name, for example 1376884 (Stechmuecke).
+#: includes/Admin/ConnectTab.php:186
+#, php-format
+msgid "Shop %s on the North American platform"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:220
+#: includes/Admin/ConnectTab.php:312
+msgid "Shop ID"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:224
+msgid "Shop Name"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:232
+#: includes/Admin/ConnectTab.php:316
+msgid "Locale"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:238
+msgid "Confirm Connection"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:267
+msgid "Influences language, currency and units of measurement."
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:282
+msgid "Connected"
+msgstr ""
+
+#. translators: %s: the [spreadshop] shortcode, shown in bold.
+#: includes/Admin/ConnectTab.php:287
+#, php-format
+msgid "You can now embed your Spreadshop anywhere using the shortcode %s!"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:293
+msgid "If you want a specific page of your shop to show, you can pass a deeplink parameter."
+msgstr ""
+
+#. translators: 1: an example shop url, 2: the matching shortcode, shown in bold.
+#: includes/Admin/ConnectTab.php:297
+#, php-format
+msgid "For example, to show %1$s use the short code %2$s."
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:322
+msgid "Disconnect"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:341
+msgid "You left the field empty!"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:347
+msgid "The input you provided is neither a valid shop ID nor name!"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:362
+msgid "Could not find any shop with this ID or name!"
+msgstr ""
+
+#. translators: %s: the underlying transport error reported by WordPress.
+#: includes/Admin/ConnectTab.php:391
+#, php-format
+msgid "Could not reach Spreadshirt: %s"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:394
+msgid "Spreadshirt refused the request (HTTP 403). This server's outgoing TLS stack is likely too old — setup needs PHP 8.1 or newer (OpenSSL 3)."
+msgstr ""
+
+#. translators: %d: an HTTP status code, for example 500.
+#: includes/Admin/ConnectTab.php:397
+#, php-format
+msgid "Spreadshirt answered with HTTP %d. Try again in a moment."
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:399
+msgid "Could not reach Spreadshirt! Try again."
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:433
+msgid "Invalid shop ID"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:439
+msgid "Invalid platform"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:445
+msgid "Invalid locale"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:498
+msgid "Spreadshirt returned a response this plugin could not read."
+msgstr ""
+
+#: includes/Admin/Frame.php:34
+msgid "A WordPress plugin to seamlessly integrate your shop with your WordPress website."
+msgstr ""
+
+#: includes/Admin/Frame.php:42
+msgid "Advanced"
+msgstr ""
+
+#: includes/Admin/Frame.php:61
+msgid "Preview Shop"
+msgstr ""

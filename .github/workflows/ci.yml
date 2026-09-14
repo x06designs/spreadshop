@@ -1,0 +1,105 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Coding standards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+          tools: composer
+
+      - uses: ramsey/composer-install@v4
+
+      - run: composer lint
+
+  static-analysis:
+    name: Static analysis
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+          tools: composer
+
+      - uses: ramsey/composer-install@v4
+
+      - run: composer phpstan
+
+  test:
+    name: Unit tests (PHP ${{ matrix.php }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # 8.1 is the declared floor; 8.4 is the newest release the plugin claims to run on.
+        php: ['8.1', '8.4']
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          tools: composer
+
+      # composer.json pins config.platform.php to 8.1.0, so the lock resolves identically on
+      # every runner in the matrix and a newer PHP needs no platform override. Verified by
+      # installing and running the suite on 8.4 against this lock file.
+      - uses: ramsey/composer-install@v4
+
+      - run: composer test:unit
+
+  audit:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+          tools: composer
+
+      - uses: ramsey/composer-install@v4
+
+      # Dev-only dependencies, but a vulnerable one still runs on every contributor's machine
+      # and in this workflow.
+      - run: composer audit
+
+  package:
+    name: Build the release artifact
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # Proves the shipped tree is buildable and carries no development files. The script
+      # fails if the two version declarations have drifted or a dev file has leaked in.
+      - run: ./scripts/package-plugin.sh
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: spreadshop-plugin
+          path: dist/*.zip
+          if-no-files-found: error
