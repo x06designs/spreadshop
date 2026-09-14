@@ -25,26 +25,12 @@ function spreadshopSetTitle( $titleParts ) {
 	return array( 'title' => get_option( 'spreadshopSlug' ) );
 }
 
-/**
- * Keeps Yoast SEO from marking the generated page as noindex.
- *
- * Yoast sets "noindex, follow" on every page where is_404() is true, which a slug based
- * integration always is, because no WordPress post backs the url.
- *
- * @return bool Always false.
- */
-function spreadshopAvoidYoastNoindex() {
-	return false;
-}
-
 add_filter( 'document_title_parts', 'spreadshopSetTitle', 10, 1 );
-add_filter( 'wpseo_robots', 'spreadshopAvoidYoastNoindex' );
-status_header( 200 );
 
-$spreadshopPushStateBaseUrl = null;
-if ( get_option( 'spreadshopOptimizeUrl' ) ) {
-	$spreadshopPushStateBaseUrl = rtrim( get_home_url(), '/' ) . '/' . trim( get_option( 'spreadshopSlug' ), " \t\n\r\0\x0B/" );
-}
+// The 404 state and the status header are dealt with by SlugRoute::claimRequest(), which
+// runs early enough for SEO plugins to see the corrected request.
+
+$spreadshopPushStateBaseUrl = SlugRoute::pushStateBaseUrl();
 
 /*
  * A block theme has no header.php or footer.php. get_header() then emits a deprecation

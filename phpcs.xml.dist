@@ -51,6 +51,10 @@
     <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
         <exclude-pattern>tests/*</exclude-pattern>
     </rule>
+    <!-- Tests build the global query themselves; that is the fixture, not an override. -->
+    <rule ref="WordPress.WP.GlobalVariablesOverride">
+        <exclude-pattern>tests/*</exclude-pattern>
+    </rule>
 
     <config name="testVersion" value="8.1-"/>
     <rule ref="PHPCompatibilityWP"/>

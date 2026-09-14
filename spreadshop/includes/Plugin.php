@@ -30,6 +30,8 @@ class Plugin {
 		add_action( 'admin_menu', array( AdminPage::class, 'registerMenu' ) );
 		add_action( 'admin_init', array( Settings::class, 'registerAll' ) );
 		add_action( 'activated_plugin', array( __CLASS__, 'redirectAfterActivation' ) );
+		// Priority 1: the request has to stop being a 404 before any SEO plugin reads it.
+		add_action( 'wp', array( SlugRoute::class, 'claimRequest' ), 1 );
 		add_filter( 'template_include', array( SlugRoute::class, 'filterTemplate' ), 99 );
 		add_shortcode( 'spreadshop', array( Shortcode::class, 'render' ) );
 

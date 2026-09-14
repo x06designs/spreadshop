@@ -172,4 +172,66 @@ class SlugRouteTest extends PluginTestCase {
 		$this->given( 'meinshop', true, '/meinshop' );
 		$this->assertSame( 'https://example.test/meinshop', SlugRoute::pushStateBaseUrl() );
 	}
+
+	/**
+	 * A request the shop owns stops being a 404 before anything else reads it.
+	 *
+	 * @return void
+	 */
+	public function testClaimingARequestClearsTheNotFoundState() {
+		$this->given( 'meinshop', false, '/meinshop' );
+		$GLOBALS['wp_query']         = new \WP_Query();
+		$GLOBALS['wp_query']->is_404 = true;
+		Functions\when( 'status_header' )->justReturn( null );
+		Functions\when( 'add_filter' )->justReturn( true );
+
+		SlugRoute::claimRequest();
+
+		$this->assertFalse( $GLOBALS['wp_query']->is_404 );
+	}
+
+	/**
+	 * A request belonging to the rest of the site keeps its 404 state.
+	 *
+	 * @return void
+	 */
+	public function testAnUnrelatedRequestKeepsItsNotFoundState() {
+		$this->given( 'meinshop', false, '/impressum' );
+		$GLOBALS['wp_query']         = new \WP_Query();
+		$GLOBALS['wp_query']->is_404 = true;
+		Functions\expect( 'status_header' )->never();
+
+		SlugRoute::claimRequest();
+
+		$this->assertTrue( $GLOBALS['wp_query']->is_404 );
+	}
+
+	/**
+	 * Claiming a request answers 200 and stops WordPress canonicalising the url.
+	 *
+	 * @return void
+	 */
+	public function testClaimingARequestAnswersTwoHundredAndStopsCanonicalisation() {
+		$this->given( 'meinshop', true, '/meinshop/a-design' );
+		$GLOBALS['wp_query'] = new \WP_Query();
+
+		$status  = null;
+		$filters = array();
+		Functions\when( 'status_header' )->alias(
+			static function ( $code ) use ( &$status ) {
+				$status = $code;
+			}
+		);
+		Functions\when( 'add_filter' )->alias(
+			static function ( $hook ) use ( &$filters ) {
+				$filters[] = $hook;
+				return true;
+			}
+		);
+
+		SlugRoute::claimRequest();
+
+		$this->assertSame( 200, $status );
+		$this->assertContains( 'redirect_canonical', $filters );
+	}
 }

@@ -16,6 +16,34 @@ defined( 'ABSPATH' ) || exit;
 class SlugRoute {
 
 	/**
+	 * Takes the request out of its 404 state when the shop owns it.
+	 *
+	 * No WordPress post backs this url, so the main query resolved it as a 404. Correcting
+	 * that has to happen before anything reads the result: SEO plugins build their view of
+	 * the request early and act on is_404() -- Yoast by marking the page noindex, Rank Math
+	 * by titling it "Page Not Found". Doing it here rather than in the template fixes all of
+	 * them at once, including plugins this code has never heard of.
+	 *
+	 * @return void
+	 */
+	public static function claimRequest() {
+		if ( ! self::matchesRequest() ) {
+			return;
+		}
+
+		global $wp_query;
+		if ( $wp_query instanceof \WP_Query ) {
+			$wp_query->is_404 = false;
+		}
+
+		// Once the request is no longer a 404, WordPress would canonicalise it -- appending a
+		// trailing slash, and with pushState urls interfering with paths the shop client owns.
+		add_filter( 'redirect_canonical', '__return_false' );
+
+		status_header( 200 );
+	}
+
+	/**
 	 * Renders the shop to the page matching the configured slug.
 	 *
 	 * @param string $template Template WordPress resolved for this request.

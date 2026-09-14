@@ -19,6 +19,23 @@ if ( ! defined( 'SPREADSHOP_FILE' ) ) {
 	define( 'SPREADSHOP_FILE', dirname( __DIR__ ) . '/spreadshop/spreadshop.php' );
 }
 
+// SlugRoute type-checks the global query before touching it; without a class of that name
+// the check can never pass and the claim would be untestable.
+if ( ! class_exists( 'WP_Query' ) ) {
+	/**
+	 * Minimal stand-in for WordPress's main query object.
+	 */
+	class WP_Query {
+
+		/**
+		 * Whether the request resolved to a missing page.
+		 *
+		 * @var bool
+		 */
+		public $is_404 = true;
+	}
+}
+
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once dirname( __DIR__ ) . '/spreadshop/includes/Autoloader.php';
 
