@@ -1,0 +1,320 @@
+# Copyright (C) 2026 X-06 Designs
+# This file is distributed under the GPL2.
+msgid ""
+msgstr ""
+"Project-Id-Version: Spreadshop (Maintained Fork) 1.7.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/src\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-14T13:29:57+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: spreadshop\n"
+
+#. Plugin Name of the plugin
+#: spreadshop.php
+msgid "Spreadshop (Maintained Fork)"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: spreadshop.php
+msgid "https://github.com/x-06-designs/spreadshop"
+msgstr ""
+
+#. Description of the plugin
+#: spreadshop.php
+msgid "This plugin integrates a Spreadshirt Shop into WordPress. Community-maintained fork of the discontinued official plugin."
+msgstr ""
+
+#. Author of the plugin
+#: spreadshop.php
+msgid "X-06 Designs"
+msgstr ""
+
+#. Author URI of the plugin
+#: spreadshop.php
+msgid "https://github.com/x-06-designs"
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:63
+msgid "Please connect your shop first before you deal with advanced settings."
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:89
+msgid "Start Token (Optional)"
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:96
+msgid "To show a specific page from your shop, enter the page url here. Only the text highlighted in the example below is necessary:"
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:101
+msgid "This is primarily useful for slug-based integrations (see below)."
+msgstr ""
+
+#. translators: %s: the deeplink= shortcode parameter, shown in bold.
+#: admin/spreadshop-admin-advanced.php:105
+#, php-format
+msgid "When using the shortcode, the same effect can be achieved by using the %s parameter."
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:115
+msgid "Update Meta Data"
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:122
+msgid "Allow Spreadshop to update your site's head section"
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:125
+msgid "Spreadshop will update your site's title, description, seoIndex, as well as OpenGraph and Twitter Card tags."
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:132
+msgid "Load Spreadshop Fonts"
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:139
+msgid "Use Fonts from your Shop's Partner Area"
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:142
+msgid "If unchecked, the fonts from your WordPress theme will be used."
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:149
+msgid "Mobile Swipe Menu"
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:156
+msgid "Use Mobile Swipe Menu instead of Burger Menu"
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:159
+msgid "Check this option to avoid a second separate burger-menu from showing up on your page if your site already uses one."
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:166
+msgid "Alternative slug-based integration"
+msgstr ""
+
+#. translators: %s: the [spreadshop] shortcode, shown in bold.
+#: admin/spreadshop-admin-advanced.php:171
+#, php-format
+msgid "The recommended way of embedding your Spreadshop is to use the %s short code."
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:176
+msgid "Alternatively, you can define a slug (url path) here to embed the Spreadshop."
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:177
+#: admin/spreadshop-admin-frame.php:66
+msgid "Read more in our FAQ >"
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:184
+msgid "Shop URL Path (Optional)"
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:190
+msgid "Define a URL path where you want your Spreadshop to show up on your WordPress website."
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:195
+msgid "Push State URLs"
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:202
+msgid "Optimize URL"
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:204
+msgid "Removes the hashbangs (as shown in the example below) from your URLs"
+msgstr ""
+
+#. translators: %s: the "Shop URL Path" setting name, shown in bold.
+#: admin/spreadshop-admin-advanced.php:210
+#, php-format
+msgid "This only works when using the %s method instead of the shortcode."
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:211
+msgid "Shop URL Path"
+msgstr ""
+
+#: admin/spreadshop-admin-advanced.php:219
+msgid "Save Changes"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:101
+msgid "Connect your Shop"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:102
+msgid "Please conclude the initial shop-linking step outlined below. Instructions on how to embed your linked shop will follow."
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:108
+msgid "Shop Name or ID"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:115
+msgid "ERROR:"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:122
+msgid "Enter your Spreadshop's numeric ID (found in the Partner Area) or name."
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:123
+msgid "The name is visible in your shop's url, for example:"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:130
+#: admin/spreadshop-admin-frame.php:36
+msgid "Connect"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:134
+msgid "No shop yet?"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:135
+msgid "Register now!"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:152
+msgid "Confirm the Connection"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:159
+#: admin/spreadshop-admin-connect.php:223
+#: admin/spreadshop-admin-connect.php:303
+msgid "Platform"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:161
+msgid "We found shops matching your criteria on both platforms. Which one do you want to link?"
+msgstr ""
+
+#. translators: %s: shop id and name, for example 1376884 (Stechmuecke).
+#: admin/spreadshop-admin-connect.php:169
+#, php-format
+msgid "Shop %s on the European platform"
+msgstr ""
+
+#. translators: %s: shop id and name, for example 1376884 (Stechmuecke).
+#: admin/spreadshop-admin-connect.php:181
+#, php-format
+msgid "Shop %s on the North American platform"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:215
+#: admin/spreadshop-admin-connect.php:307
+msgid "Shop ID"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:219
+msgid "Shop Name"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:227
+#: admin/spreadshop-admin-connect.php:311
+msgid "Locale"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:233
+msgid "Confirm Connection"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:262
+msgid "Influences language, currency and units of measurement."
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:277
+msgid "Connected"
+msgstr ""
+
+#. translators: %s: the [spreadshop] shortcode, shown in bold.
+#: admin/spreadshop-admin-connect.php:282
+#, php-format
+msgid "You can now embed your Spreadshop anywhere using the shortcode %s!"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:288
+msgid "If you want a specific page of your shop to show, you can pass a deeplink parameter."
+msgstr ""
+
+#. translators: 1: an example shop url, 2: the matching shortcode, shown in bold.
+#: admin/spreadshop-admin-connect.php:292
+#, php-format
+msgid "For example, to show %1$s use the short code %2$s."
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:317
+msgid "Disconnect"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:336
+msgid "You left the field empty!"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:342
+msgid "The input you provided is neither a valid shop ID nor name!"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:357
+msgid "Could not find any shop with this ID or name!"
+msgstr ""
+
+#. translators: %s: the underlying transport error reported by WordPress.
+#: admin/spreadshop-admin-connect.php:386
+#, php-format
+msgid "Could not reach Spreadshirt: %s"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:389
+msgid "Spreadshirt refused the request (HTTP 403). This server's outgoing TLS stack is likely too old — setup needs PHP 8.1 or newer (OpenSSL 3)."
+msgstr ""
+
+#. translators: %d: an HTTP status code, for example 500.
+#: admin/spreadshop-admin-connect.php:392
+#, php-format
+msgid "Spreadshirt answered with HTTP %d. Try again in a moment."
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:394
+msgid "Could not reach Spreadshirt! Try again."
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:428
+msgid "Invalid shop ID"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:434
+msgid "Invalid platform"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:440
+msgid "Invalid locale"
+msgstr ""
+
+#: admin/spreadshop-admin-connect.php:493
+msgid "Spreadshirt returned a response this plugin could not read."
+msgstr ""
+
+#: admin/spreadshop-admin-frame.php:32
+msgid "A WordPress plugin to seamlessly integrate your shop with your WordPress website."
+msgstr ""
+
+#: admin/spreadshop-admin-frame.php:40
+msgid "Advanced"
+msgstr ""
+
+#: admin/spreadshop-admin-frame.php:59
+msgid "Preview Shop"
+msgstr ""
