@@ -1,11 +1,16 @@
 === Spreadshop Plugin ===
-Contributors: Robert Schulz, Christian Lenz, Hanna Schmidt, Stefan Drehmann, Beatrice Thom
+Contributors: X-06 Designs (fork maintainer), Robert Schulz, Christian Lenz, Hanna Schmidt, Stefan Drehmann, Beatrice Thom
 Tags: spreadshirt,shop,spreadshop,shirt shop, t-shirt, spreadshirt plugin, spreadshirt shop, online shop, shop online, wordpress integration, e-commerce, merchandising
-Requires at least: 1.0
-Tested up to: 6.4.3
-Stable tag: 1.6.6
+Requires at least: 6.0
+Tested up to: 7.1
+Requires PHP: 8.1
+Stable tag: 1.7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+This is a community-maintained fork. The official plugin was last updated in February 2024 and no longer connects to Spreadshirt.
+
+Originally written by Robert Schulz (sprd.net AG) and Stefan Drehmann (IronShark GmbH), copyright (C) sprd.net AG and IronShark GmbH, licensed GPL-2.0. Modified from 1.7.0 onward by X-06 Designs. Spreadshop and Spreadshirt are trademarks of sprd.net AG; this fork is not endorsed by, affiliated with, or supported by sprd.net AG or IronShark GmbH.
 
 Easily integrate the Spreadshop system into your WordPress blog or business page, instantly adding a powerful merchandise channel that perfectly fits the needs of your brand.
 
@@ -49,10 +54,23 @@ Simply put, if you signed up on .com, .ca or .com.au, your Spreadshop runs on th
 This information is only relevant to you if a shop with the same ID or name exists on both platforms and you have to specify which one is yours.
 
 = Where can I get more support? =
-Visit our [forum](https://www.spreadshop.com/forum/) and get to know other Shop Owners who can help. Spreadshop staff is also available there.
+For questions about this fork, open an issue on its repository. Spreadshop staff do not support it.
+For questions about your Spreadshop itself — products, payouts, designs — the [Spreadshop forum](https://www.spreadshop.com/forum/) is still the right place.
+
+= What does the plugin load from third parties, and when? (GDPR) =
+Every page carrying the shop loads it directly from Spreadshirt's servers, as soon as the page renders. No visitor action is required and the plugin asks for no consent of its own. Measured on a page with the shop embedded, these hosts are contacted:
+
+* `<shop>.myspreadshop.net` (or `.com` on the North American platform) — the shop client script, stylesheet and shop data
+* `image.spreadshirtmedia.net` — product and design images
+* `www.spreadshirt.net` — Spreadshirt's own cookie-consent script
+
+Each of those requests discloses the visitor's IP address and user agent to Spreadshirt. Spreadshirt sets a `sprdConsent` cookie and shows its own consent banner inside the shop; it defaults to necessary-only until the visitor decides. The plugin itself sets no cookies, uses no local storage and loads nothing from Google.
+
+Two consequences for a site under GDPR: name Spreadshirt as a recipient in your privacy policy, and if your site uses a consent manager, gate the page or the shortcode behind it — the plugin does not do this for you, because the embed is a plain script tag rendered server-side.
 
 = What If I deactivate the plugin? =
 Spreadshop will disappear from your WordPress system. This, however, does *not* affect your stand-alone Spreadshop in any way.
+Your connection settings are kept, so reactivating the plugin restores the embed without reconnecting. They are deleted only when you uninstall the plugin, or when you press "Disconnect" in the admin menu.
 
 = How do I uninstall the plugin? =
 1. Go to your WordPress plugin section.
@@ -61,6 +79,16 @@ Spreadshop will disappear from your WordPress system. This, however, does *not* 
 
 
 == Changelog ==
+### 1.7.0
+* Fixed shop connection failing with "Could not reach Spreadshirt": Spreadshirt's edge rejects requests that carry no browser-style User-Agent and no Accept-Language header
+* Deactivating the plugin no longer deletes your configuration — settings are now removed on uninstall only
+* Replaced the settings header logo, whose hosted asset no longer exists, with a text wordmark
+* Connection errors now report the actual cause instead of a blanket "could not reach"
+* Fixed the shortcode guard, which never engaged and re-emitted the shop for every [spreadshop] on a page
+* The post-activation redirect no longer fires during bulk activation, WP-CLI or cron
+* Removed PHP 8 warnings from unguarded request and response array access
+* Setup requires PHP 8.1 or newer: older TLS stacks (OpenSSL 1.1.1) are refused by Spreadshirt
+
 ### 1.6.6
 * Fixed a CSRF vulnerability
 
