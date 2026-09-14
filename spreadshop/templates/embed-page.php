@@ -13,16 +13,16 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Titles the generated page after the configured slug.
  *
- * The incoming parts are replaced rather than merged, so the title is the slug alone with
- * no site name appended. That is the behaviour this integration has always had; preserving
- * it here keeps existing pages' titles stable.
+ * Only the title part is replaced. The site name and tagline the theme supplies are kept, so
+ * the shop page is titled like every other page on the site rather than standing alone.
  *
- * @param array<string, string> $titleParts Existing title parts, deliberately discarded.
+ * @param array<string, string> $titleParts Existing title parts.
  * @return array<string, string> Title parts for the document_title_parts filter.
  */
 function spreadshopSetTitle( $titleParts ) {
-	unset( $titleParts );
-	return array( 'title' => get_option( 'spreadshopSlug' ) );
+	$titleParts['title'] = get_option( 'spreadshopSlug' );
+
+	return $titleParts;
 }
 
 add_filter( 'document_title_parts', 'spreadshopSetTitle', 10, 1 );

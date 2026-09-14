@@ -8,6 +8,7 @@
 namespace Spreadshop;
 
 use Spreadshop\Admin\AdminPage;
+use Spreadshop\Embed\ResourceHints;
 use Spreadshop\Embed\Shortcode;
 use Spreadshop\Embed\SlugRoute;
 
@@ -34,6 +35,7 @@ class Plugin {
 		add_action( 'wp', array( SlugRoute::class, 'claimRequest' ), 1 );
 		add_filter( 'template_include', array( SlugRoute::class, 'filterTemplate' ), 99 );
 		add_shortcode( 'spreadshop', array( Shortcode::class, 'render' ) );
+		add_filter( 'wp_resource_hints', array( ResourceHints::class, 'filter' ), 10, 2 );
 
 		/*
 		 * The callback NAME is persisted in the uninstall_plugins option, so it has to stay a

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-14T13:52:26+00:00\n"
+"POT-Creation-Date: 2026-09-14T15:18:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: spreadshop\n"
@@ -150,160 +150,172 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:106
+#: includes/Admin/ConnectTab.php:114
 msgid "Connect your Shop"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:107
+#: includes/Admin/ConnectTab.php:115
 msgid "Please conclude the initial shop-linking step outlined below. Instructions on how to embed your linked shop will follow."
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:113
+#: includes/Admin/ConnectTab.php:121
 msgid "Shop Name or ID"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:120
+#: includes/Admin/ConnectTab.php:128
 msgid "ERROR:"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:127
+#: includes/Admin/ConnectTab.php:135
 msgid "Enter your Spreadshop's numeric ID (found in the Partner Area) or name."
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:128
+#: includes/Admin/ConnectTab.php:136
 msgid "The name is visible in your shop's url, for example:"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:135
+#: includes/Admin/ConnectTab.php:143
 #: includes/Admin/Frame.php:38
 msgid "Connect"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:139
+#: includes/Admin/ConnectTab.php:147
 msgid "No shop yet?"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:140
+#: includes/Admin/ConnectTab.php:148
 msgid "Register now!"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:157
+#: includes/Admin/ConnectTab.php:165
 msgid "Confirm the Connection"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:164
-#: includes/Admin/ConnectTab.php:228
-#: includes/Admin/ConnectTab.php:308
+#: includes/Admin/ConnectTab.php:172
+#: includes/Admin/ConnectTab.php:236
+#: includes/Admin/ConnectTab.php:322
 msgid "Platform"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:166
+#: includes/Admin/ConnectTab.php:175
 msgid "We found shops matching your criteria on both platforms. Which one do you want to link?"
 msgstr ""
 
 #. translators: %s: shop id and name, for example 1376884 (Stechmuecke).
-#: includes/Admin/ConnectTab.php:174
+#: includes/Admin/ConnectTab.php:182
 #, php-format
 msgid "Shop %s on the European platform"
 msgstr ""
 
 #. translators: %s: shop id and name, for example 1376884 (Stechmuecke).
-#: includes/Admin/ConnectTab.php:186
+#: includes/Admin/ConnectTab.php:194
 #, php-format
 msgid "Shop %s on the North American platform"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:220
-#: includes/Admin/ConnectTab.php:312
+#: includes/Admin/ConnectTab.php:228
+#: includes/Admin/ConnectTab.php:326
 msgid "Shop ID"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:224
+#: includes/Admin/ConnectTab.php:232
 msgid "Shop Name"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:232
-#: includes/Admin/ConnectTab.php:316
+#: includes/Admin/ConnectTab.php:240
+#: includes/Admin/ConnectTab.php:330
 msgid "Locale"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:238
+#: includes/Admin/ConnectTab.php:246
 msgid "Confirm Connection"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:267
+#: includes/Admin/ConnectTab.php:275
 msgid "Influences language, currency and units of measurement."
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:282
+#: includes/Admin/ConnectTab.php:291
 msgid "Connected"
 msgstr ""
 
 #. translators: %s: the [spreadshop] shortcode, shown in bold.
-#: includes/Admin/ConnectTab.php:287
+#: includes/Admin/ConnectTab.php:301
 #, php-format
 msgid "You can now embed your Spreadshop anywhere using the shortcode %s!"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:293
+#: includes/Admin/ConnectTab.php:307
 msgid "If you want a specific page of your shop to show, you can pass a deeplink parameter."
 msgstr ""
 
 #. translators: 1: an example shop url, 2: the matching shortcode, shown in bold.
-#: includes/Admin/ConnectTab.php:297
+#: includes/Admin/ConnectTab.php:311
 #, php-format
 msgid "For example, to show %1$s use the short code %2$s."
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:322
+#: includes/Admin/ConnectTab.php:336
 msgid "Disconnect"
 msgstr ""
 
 #: includes/Admin/ConnectTab.php:341
-msgid "You left the field empty!"
+msgid "Not sure the shop is still reachable? Ask Spreadshirt right now."
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:347
-msgid "The input you provided is neither a valid shop ID nor name!"
+#: includes/Admin/ConnectTab.php:343
+msgid "Test connection"
 msgstr ""
 
 #: includes/Admin/ConnectTab.php:362
+msgid "You left the field empty!"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:368
+msgid "The input you provided is neither a valid shop ID nor name!"
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:383
 msgid "Could not find any shop with this ID or name!"
 msgstr ""
 
 #. translators: %s: the underlying transport error reported by WordPress.
-#: includes/Admin/ConnectTab.php:391
+#: includes/Admin/ConnectTab.php:412
 #, php-format
 msgid "Could not reach Spreadshirt: %s"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:394
+#: includes/Admin/ConnectTab.php:415
 msgid "Spreadshirt refused the request (HTTP 403). This server's outgoing TLS stack is likely too old — setup needs PHP 8.1 or newer (OpenSSL 3)."
 msgstr ""
 
 #. translators: %d: an HTTP status code, for example 500.
-#: includes/Admin/ConnectTab.php:397
+#: includes/Admin/ConnectTab.php:418
 #, php-format
 msgid "Spreadshirt answered with HTTP %d. Try again in a moment."
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:399
+#: includes/Admin/ConnectTab.php:420
 msgid "Could not reach Spreadshirt! Try again."
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:433
+#: includes/Admin/ConnectTab.php:442
+msgid "Connection works. Spreadshirt answered and the shop was found."
+msgstr ""
+
+#: includes/Admin/ConnectTab.php:493
 msgid "Invalid shop ID"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:439
+#: includes/Admin/ConnectTab.php:499
 msgid "Invalid platform"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:445
+#: includes/Admin/ConnectTab.php:505
 msgid "Invalid locale"
 msgstr ""
 
-#: includes/Admin/ConnectTab.php:498
+#: includes/Admin/ConnectTab.php:557
 msgid "Spreadshirt returned a response this plugin could not read."
 msgstr ""
 

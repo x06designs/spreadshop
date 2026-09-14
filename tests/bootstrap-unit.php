@@ -3,8 +3,9 @@
  * Bootstrap for the unit suite.
  *
  * These tests run without WordPress: Brain Monkey stands in for the functions the plugin
- * calls. The plugin's own autoloader is used rather than a test-only one, so a class that
- * cannot be autoloaded in production fails here too.
+ * calls, and tests/stubs/ for the two classes it type-checks against. The plugin's own
+ * autoloader is used rather than a test-only one, so a class that cannot be autoloaded in
+ * production fails here too.
  *
  * @package Spreadshop
  */
@@ -19,24 +20,16 @@ if ( ! defined( 'SPREADSHOP_FILE' ) ) {
 	define( 'SPREADSHOP_FILE', dirname( __DIR__ ) . '/spreadshop/spreadshop.php' );
 }
 
-// SlugRoute type-checks the global query before touching it; without a class of that name
-// the check can never pass and the claim would be untestable.
-if ( ! class_exists( 'WP_Query' ) ) {
-	/**
-	 * Minimal stand-in for WordPress's main query object.
-	 */
-	class WP_Query {
+require_once __DIR__ . '/../vendor/autoload.php';
 
-		/**
-		 * Whether the request resolved to a missing page.
-		 *
-		 * @var bool
-		 */
-		public $is_404 = true;
-	}
+if ( ! class_exists( 'WP_Query' ) ) {
+	require_once __DIR__ . '/stubs/WP_Query.php';
 }
 
-require_once __DIR__ . '/../vendor/autoload.php';
+if ( ! class_exists( 'WP_Post' ) ) {
+	require_once __DIR__ . '/stubs/WP_Post.php';
+}
+
 require_once dirname( __DIR__ ) . '/spreadshop/includes/Autoloader.php';
 
 Spreadshop\Autoloader::register( dirname( __DIR__ ) . '/spreadshop/includes' );

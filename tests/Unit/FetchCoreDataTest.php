@@ -178,6 +178,58 @@ class FetchCoreDataTest extends PluginTestCase {
 	}
 
 	/**
+	 * A one-off empty body is retried rather than reported as a broken shop.
+	 *
+	 * Spreadshirt occasionally answers 200 with nothing in it; the next request succeeds.
+	 *
+	 * @return void
+	 */
+	public function testATransientEmptyBodyIsRetried() {
+		Functions\when( 'get_locale' )->justReturn( 'de_DE' );
+		Functions\when( 'home_url' )->justReturn( 'https://example.test/' );
+		Functions\when( 'is_wp_error' )->justReturn( false );
+		Functions\when( 'wp_remote_get' )->justReturn( array( 'ok' ) );
+		Functions\when( 'wp_remote_retrieve_response_code' )->justReturn( 200 );
+
+		$bodies = array( '', $this->payload() );
+		Functions\when( 'wp_remote_retrieve_body' )->alias(
+			static function () use ( &$bodies ) {
+				return array_shift( $bodies );
+			}
+		);
+
+		$result = $this->fetch( 'stechmuecke', 'EU' );
+
+		$this->assertSame( 200, $result['status'] );
+		$this->assertSame( 1376884, $result['shopId'] );
+	}
+
+	/**
+	 * A body that is persistently unusable is reported, not retried forever.
+	 *
+	 * @return void
+	 */
+	public function testAPersistentlyBadBodyGivesUp() {
+		$calls = 0;
+		Functions\when( 'get_locale' )->justReturn( 'de_DE' );
+		Functions\when( 'home_url' )->justReturn( 'https://example.test/' );
+		Functions\when( 'is_wp_error' )->justReturn( false );
+		Functions\when( 'wp_remote_retrieve_response_code' )->justReturn( 200 );
+		Functions\when( 'wp_remote_retrieve_body' )->justReturn( '' );
+		Functions\when( 'wp_remote_get' )->alias(
+			static function () use ( &$calls ) {
+				++$calls;
+				return array( 'ok' );
+			}
+		);
+
+		$result = $this->fetch( 'stechmuecke', 'EU' );
+
+		$this->assertSame( -1, $result['status'] );
+		$this->assertSame( ConnectTab::MAX_LOOKUP_ATTEMPTS, $calls, 'should stop at the attempt cap' );
+	}
+
+	/**
 	 * Each platform is asked on its own domain.
 	 *
 	 * @dataProvider platformProvider
