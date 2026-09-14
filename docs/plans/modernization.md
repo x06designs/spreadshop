@@ -1,6 +1,6 @@
 # Spreadshop fork — modernization plan
 
-Status: **Phases 0 and 1 approved and in progress.** Phases 2-4 deferred to a separate run.
+Status: **Phases 0, 1 and 2 done.** Phases 3 (tests) and 4 (packaging, CI) remain.
 
 Decisions taken at the goals gate:
 
