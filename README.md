@@ -42,12 +42,12 @@ Once you activate the plugin, you will be redirected to the plugin's admin menu.
 No, this plugin will simply *embed* your Spreadshop *as-is* into your WordPress system.
 
 = How does this work from a technical point of view? =
-This plugin simply performs a "Website Integration with JavaScript" under the hood, as explained [here](https://help.spreadshop.com/hc/en-us/articles/360010529039-Website-Integration-with-JavaScript).
+This plugin simply performs a "Website Integration with JavaScript" under the hood, as explained in the [FAQ](FAQ.md).
 The advantage of using this plugin is that you do not need to write any code yourself.
 
 = Can I use the plugin to make my Spreadshop the start page of my site? =
 Most WordPress themes come with a pre-installed start page layout. The plugin is not able to overwrite this setting, but you can usually embed your Spreadshop into the start page.
-If you just want to run your Spreadshop on your own domain and nothing else, we recommend not to use WordPress at all but to follow the steps described [here](https://help.spreadshop.com/hc/en-us/articles/360010529039-Website-Integration-with-JavaScript).
+If you just want to run your Spreadshop on your own domain and nothing else, we recommend not to use WordPress at all but to follow the steps described in the [FAQ](FAQ.md).
 
 = Which platform am I using? =
 Simply put, if you signed up on .com, .ca or .com.au, your Spreadshop runs on the North American platform. All other domains imply you are based on the European platform.
@@ -55,7 +55,7 @@ This information is only relevant to you if a shop with the same ID or name exis
 
 = Where can I get more support? =
 For questions about this fork, open an issue on its repository. Spreadshop staff do not support it.
-For questions about your Spreadshop itself — products, payouts, designs — the [Spreadshop forum](https://www.spreadshop.com/forum/) is still the right place.
+For questions about your Spreadshop itself — products, payouts, designs — use Spreadshirt's own channels, via the [Partner Area](https://partner.spreadshirt.de/) or [spreadshop.com](https://www.spreadshop.com/). The old forum and help-centre addresses no longer resolve.
 
 = What does the plugin load from third parties, and when? (GDPR) =
 Every page carrying the shop loads it directly from Spreadshirt's servers, as soon as the page renders. No visitor action is required and the plugin asks for no consent of its own. Measured on a page with the shop embedded, these hosts are contacted:
