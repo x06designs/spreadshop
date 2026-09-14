@@ -5,13 +5,17 @@
  * @package Spreadshop
  */
 
+namespace Spreadshop\Admin;
+
+use Spreadshop\Constants;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class SpreadshopAdminAdvanced
+ * Class AdvancedTab
  * Renders the "Advanced" admin interface and handles the form data posted from it.
  */
-class SpreadshopAdminAdvanced {
+class AdvancedTab {
 
 	/**
 	 * Persists a submitted Advanced form and reports which view to render.
@@ -25,7 +29,7 @@ class SpreadshopAdminAdvanced {
 		}
 		if ( isset( $_SERVER['REQUEST_METHOD'] ) && $_SERVER['REQUEST_METHOD'] === 'POST' ) {
 			// Nonce check for the '_wpnonce' input.
-			check_admin_referer( SpreadshopConstants::SPREADSHOP_SETTINGS_GROUP . '-options' );
+			check_admin_referer( Constants::SPREADSHOP_SETTINGS_GROUP . '-options' );
 			self::handleUpdate();
 		}
 		return array( 'page' => 'connected' );
@@ -80,8 +84,8 @@ class SpreadshopAdminAdvanced {
 		?>
 		<div id="spreadShopSettingsEdit">
 			<form method="post">
-				<?php settings_fields( SpreadshopConstants::SPREADSHOP_SETTINGS_GROUP ); ?>
-				<?php do_settings_sections( SpreadshopConstants::SPREADSHOP_SETTINGS_GROUP ); ?>
+				<?php settings_fields( Constants::SPREADSHOP_SETTINGS_GROUP ); ?>
+				<?php do_settings_sections( Constants::SPREADSHOP_SETTINGS_GROUP ); ?>
 				<table class="form-table">
 					<tbody>
 					<tr>

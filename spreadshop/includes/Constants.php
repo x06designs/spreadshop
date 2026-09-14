@@ -5,13 +5,15 @@
  * @package Spreadshop
  */
 
+namespace Spreadshop;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class SpreadshopConstants
+ * Class Constants
  * Values shared across the admin screen, the embed and the uninstall routine.
  */
-class SpreadshopConstants {
+class Constants {
 
 	/**
 	 * Settings group the admin forms nonce against.

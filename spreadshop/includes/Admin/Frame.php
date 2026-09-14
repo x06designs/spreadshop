@@ -5,13 +5,15 @@
  * @package Spreadshop
  */
 
+namespace Spreadshop\Admin;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class SpreadshopAdminFrame
+ * Class Frame
  * Renders header and footer of the admin section.
  */
-class SpreadshopAdminFrame {
+class Frame {
 
 	/**
 	 * Opens the admin page markup: header, tab navigation and the settings section.

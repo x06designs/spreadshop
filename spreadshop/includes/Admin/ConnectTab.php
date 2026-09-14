@@ -5,13 +5,18 @@
  * @package Spreadshop
  */
 
+namespace Spreadshop\Admin;
+
+use Spreadshop\Constants;
+use Spreadshop\Settings;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class SpreadshopAdminConnect
+ * Class ConnectTab
  * Renders the "Connect your Shop" interfaces and handles the form data posted from them.
  */
-class SpreadshopAdminConnect {
+class ConnectTab {
 
 	/**
 	 * Locales selectable per platform when a shop serves more than one.
@@ -57,7 +62,7 @@ class SpreadshopAdminConnect {
 	public static function handle( $isConnected ) {
 		if ( isset( $_SERVER['REQUEST_METHOD'] ) && $_SERVER['REQUEST_METHOD'] === 'POST' ) {
 			// Nonce check for the '_wpnonce' input.
-			check_admin_referer( SpreadshopConstants::SPREADSHOP_SETTINGS_GROUP . '-options' );
+			check_admin_referer( Constants::SPREADSHOP_SETTINGS_GROUP . '-options' );
 			$form = isset( $_POST['spreadshopAdminForm'] ) ? sanitize_text_field( wp_unslash( $_POST['spreadshopAdminForm'] ) ) : '';
 			if ( $form === 'connect' ) {
 				return self::handleConnect();
@@ -101,7 +106,7 @@ class SpreadshopAdminConnect {
 		<h1><?php esc_html_e( 'Connect your Shop', 'spreadshop' ); ?></h1>
 		<p><?php esc_html_e( 'Please conclude the initial shop-linking step outlined below. Instructions on how to embed your linked shop will follow.', 'spreadshop' ); ?></p>
 		<form id="connectform" name="connectform" method="post">
-			<?php settings_fields( SpreadshopConstants::SPREADSHOP_SETTINGS_GROUP ); ?>
+			<?php settings_fields( Constants::SPREADSHOP_SETTINGS_GROUP ); ?>
 			<table class="form-table">
 				<tr>
 					<th scope="row">
@@ -208,7 +213,7 @@ class SpreadshopAdminConnect {
 	private static function renderConfirmForm( $formId, $platform, $response, $hidden ) {
 		?>
 		<form id="<?php echo esc_attr( $formId ); ?>" name="connectform" method="post" <?php echo esc_attr( $hidden ? 'hidden' : '' ); ?>>
-		<?php settings_fields( SpreadshopConstants::SPREADSHOP_SETTINGS_GROUP ); ?>
+		<?php settings_fields( Constants::SPREADSHOP_SETTINGS_GROUP ); ?>
 		<table class="form-table">
 			<tbody>
 			<tr>
@@ -296,7 +301,7 @@ class SpreadshopAdminConnect {
 			?>
 		</p>
 		<form id="connectform" name="connectform" method="post">
-			<?php settings_fields( SpreadshopConstants::SPREADSHOP_SETTINGS_GROUP ); ?>
+			<?php settings_fields( Constants::SPREADSHOP_SETTINGS_GROUP ); ?>
 			<table class="form-table">
 				<tbody>
 				<tr>
@@ -400,7 +405,7 @@ class SpreadshopAdminConnect {
 	 * @return array<string, string> Render instructions for the empty Connect form.
 	 */
 	private static function handleDisconnect() {
-		spreadshopDeleteSettings();
+		Settings::deleteAll();
 		return array(
 			'page'     => 'initial',
 			'errorMsg' => '',
@@ -521,7 +526,7 @@ class SpreadshopAdminConnect {
 	 * @return string User-Agent header value.
 	 */
 	private static function userAgent() {
-		return 'Mozilla/5.0 (compatible; SpreadshopWP/' . SpreadshopConstants::SPREADSHOP_VERSION . '; +' . home_url( '/' ) . ')';
+		return 'Mozilla/5.0 (compatible; SpreadshopWP/' . Constants::SPREADSHOP_VERSION . '; +' . home_url( '/' ) . ')';
 	}
 
 	/**

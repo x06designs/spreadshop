@@ -5,9 +5,10 @@
  * @package Spreadshop
  */
 
-defined( 'ABSPATH' ) || exit;
+use Spreadshop\Embed\Renderer;
+use Spreadshop\Embed\SlugRoute;
 
-require_once plugin_dir_path( __FILE__ ) . 'spreadshop-embed.php';
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Titles the generated page after the configured slug.
@@ -71,10 +72,10 @@ if ( $spreadshopIsBlockTheme ) {
 	get_header();
 }
 
-// spreadshopEmbed() builds its own markup and escapes every dynamic part it interpolates;
+// Renderer::render() builds its own markup and escapes every dynamic part it interpolates;
 // wp_kses_post() here would strip the shop client script tag and break the embed entirely.
 // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped at construction, see above.
-echo spreadshopEmbed( $spreadshopPushStateBaseUrl, null );
+echo Renderer::render( $spreadshopPushStateBaseUrl, null );
 
 if ( $spreadshopIsBlockTheme ) {
 	block_footer_area();
