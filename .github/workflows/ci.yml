@@ -18,7 +18,7 @@ jobs:
     name: Coding standards
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -26,7 +26,7 @@ jobs:
           coverage: none
           tools: composer
 
-      - uses: ramsey/composer-install@v3
+      - uses: ramsey/composer-install@v4
 
       - run: composer lint
 
@@ -34,7 +34,7 @@ jobs:
     name: Static analysis
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -42,7 +42,7 @@ jobs:
           coverage: none
           tools: composer
 
-      - uses: ramsey/composer-install@v3
+      - uses: ramsey/composer-install@v4
 
       - run: composer phpstan
 
@@ -55,7 +55,7 @@ jobs:
         # 8.1 is the declared floor; 8.4 is the newest release the plugin claims to run on.
         php: ['8.1', '8.4']
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -66,7 +66,7 @@ jobs:
       # composer.json pins config.platform.php to 8.1.0, so the lock resolves identically on
       # every runner in the matrix and a newer PHP needs no platform override. Verified by
       # installing and running the suite on 8.4 against this lock file.
-      - uses: ramsey/composer-install@v3
+      - uses: ramsey/composer-install@v4
 
       - run: composer test:unit
 
@@ -74,7 +74,7 @@ jobs:
     name: Dependency audit
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -82,7 +82,7 @@ jobs:
           coverage: none
           tools: composer
 
-      - uses: ramsey/composer-install@v3
+      - uses: ramsey/composer-install@v4
 
       # Dev-only dependencies, but a vulnerable one still runs on every contributor's machine
       # and in this workflow.
@@ -92,13 +92,13 @@ jobs:
     name: Build the release artifact
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       # Proves the shipped tree is buildable and carries no development files. The script
       # fails if the two version declarations have drifted or a dev file has leaked in.
       - run: ./scripts/package-plugin.sh
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: spreadshop-plugin
           path: dist/*.zip
