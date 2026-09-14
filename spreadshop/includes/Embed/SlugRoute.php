@@ -16,6 +16,29 @@ defined( 'ABSPATH' ) || exit;
 class SlugRoute {
 
 	/**
+	 * Whether this request belongs to the shop, once decided.
+	 *
+	 * Three hooks ask the same question in one request. The answer cannot change between
+	 * them, and re-deriving it invites the three to disagree.
+	 *
+	 * @var bool|null
+	 */
+	private static $ownsRequest = null;
+
+	/**
+	 * Whether the shop owns the current request.
+	 *
+	 * @return bool
+	 */
+	public static function ownsCurrentRequest() {
+		if ( null === self::$ownsRequest ) {
+			self::$ownsRequest = self::matchesRequest();
+		}
+
+		return self::$ownsRequest;
+	}
+
+	/**
 	 * Takes the request out of its 404 state when the shop owns it.
 	 *
 	 * No WordPress post backs this url, so the main query resolved it as a 404. Correcting
@@ -27,7 +50,7 @@ class SlugRoute {
 	 * @return void
 	 */
 	public static function claimRequest() {
-		if ( ! self::matchesRequest() ) {
+		if ( ! self::ownsCurrentRequest() ) {
 			return;
 		}
 
@@ -50,7 +73,7 @@ class SlugRoute {
 	 * @return string Our embed template when the request matches the configured slug, else $template.
 	 */
 	public static function filterTemplate( $template ) {
-		if ( ! self::matchesRequest() ) {
+		if ( ! self::ownsCurrentRequest() ) {
 			return $template;
 		}
 

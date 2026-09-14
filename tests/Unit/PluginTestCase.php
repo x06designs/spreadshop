@@ -8,6 +8,7 @@
 namespace Spreadshop\Tests\Unit;
 
 use Brain\Monkey\Functions;
+use Spreadshop\Embed\SlugRoute;
 use Yoast\WPTestUtils\BrainMonkey\TestCase;
 
 /**
@@ -32,5 +33,10 @@ abstract class PluginTestCase extends TestCase {
 
 		Functions\when( 'esc_url_raw' )->returnArg();
 		Functions\when( 'wp_unslash' )->returnArg();
+
+		// SlugRoute answers the same question once per request; tests are separate requests.
+		$owns = new \ReflectionProperty( SlugRoute::class, 'ownsRequest' );
+		$owns->setAccessible( true );
+		$owns->setValue( null, null );
 	}
 }

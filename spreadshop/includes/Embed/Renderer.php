@@ -8,6 +8,7 @@
 namespace Spreadshop\Embed;
 
 use Spreadshop\Constants;
+use Spreadshop\Platform;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -29,9 +30,8 @@ class Renderer {
 	 * @return string The embed markup.
 	 */
 	public static function render( $pushStateBaseUrl, $startTokenOverride ) {
-		$tld          = get_option( 'spreadshopPlatform' ) === 'EU' ? 'net' : 'com';
 		$shopId       = get_option( 'spreadshopID' );
-		$shopBaseUrl  = 'https://' . $shopId . '.myspreadshop.' . $tld;
+		$shopBaseUrl  = Platform::shopOrigin( $shopId, get_option( 'spreadshopPlatform' ) );
 		$config_array = array(
 			'shopName'            => $shopId,
 			'prefix'              => $shopBaseUrl,

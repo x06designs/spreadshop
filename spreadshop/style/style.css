@@ -98,6 +98,15 @@
     margin-bottom: 6px;
 }
 
+.sprd-ok-box {
+    width: fit-content;
+    margin-bottom: 6px;
+    border: 1px solid #008a20;
+    border-radius: 3px;
+    padding: 6px;
+    background-color: #edfaef;
+}
+
 .sprd-error-box > span {
     font-weight: bold;
 }

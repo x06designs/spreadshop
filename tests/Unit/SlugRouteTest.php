@@ -44,6 +44,11 @@ class SlugRouteTest extends PluginTestCase {
 		Functions\when( 'wp_parse_url' )->alias( static fn( $url ) => parse_url( $url ) );
 
 		$_SERVER['REQUEST_URI'] = $requestUri;
+
+		// Each given() is a new request, and the route only decides once per request.
+		$owns = new \ReflectionProperty( SlugRoute::class, 'ownsRequest' );
+		$owns->setAccessible( true );
+		$owns->setValue( null, null );
 	}
 
 	/**

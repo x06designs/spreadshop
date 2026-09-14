@@ -30,7 +30,7 @@
     "scripts": {
         "lint": "phpcs",
         "fix": "phpcbf",
-        "phpstan": "phpstan analyse --memory-limit=512M",
+        "phpstan": "phpstan analyse --memory-limit=1G",
         "check": [
             "@lint",
             "@phpstan",

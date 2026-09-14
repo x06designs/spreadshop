@@ -11,3 +11,5 @@
 *.png binary
 *.pot text eol=lf
 *.po text eol=lf
+*.js text eol=lf
+*.svg text eol=lf

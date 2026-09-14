@@ -8,6 +8,7 @@
 namespace Spreadshop\Admin;
 
 use Spreadshop\Constants;
+use Spreadshop\Platform;
 use Spreadshop\Settings;
 
 defined( 'ABSPATH' ) || exit;
@@ -17,6 +18,13 @@ defined( 'ABSPATH' ) || exit;
  * Renders the "Connect your Shop" interfaces and handles the form data posted from them.
  */
 class ConnectTab {
+
+	/**
+	 * How many times a lookup may be attempted before its answer is taken as final.
+	 *
+	 * @var int
+	 */
+	const MAX_LOOKUP_ATTEMPTS = 2;
 
 	/**
 	 * Locales selectable per platform when a shop serves more than one.
@@ -70,6 +78,8 @@ class ConnectTab {
 				return self::handleDisconnect();
 			} elseif ( $form === 'confirmConnect' ) {
 				return self::handleConfirmConnect();
+			} elseif ( $form === 'testConnection' ) {
+				return self::handleTestConnection();
 			}
 		}
 
@@ -91,7 +101,12 @@ class ConnectTab {
 		} elseif ( $renderData['page'] === 'confirm' ) {
 			self::renderConfirm( $renderData['euResponse'], $renderData['naResponse'] );
 		} elseif ( $renderData['page'] === 'connected' ) {
-			self::renderConnected( get_option( 'spreadshopPlatform' ), get_option( 'spreadshopID' ), get_option( 'spreadshopLocale' ) );
+			self::renderConnected(
+				get_option( 'spreadshopPlatform' ),
+				get_option( 'spreadshopID' ),
+				get_option( 'spreadshopLocale' ),
+				isset( $renderData['testResult'] ) ? $renderData['testResult'] : null
+			);
 		}
 	}
 
@@ -116,7 +131,7 @@ class ConnectTab {
 						<?php
 						if ( $errorMsg ) {
 							?>
-							<div class="sprd-error-box">
+							<div class="sprd-error-box" role="alert">
 								<span><?php esc_html_e( 'ERROR:', 'spreadshop' ); ?> </span><?php echo esc_html( $errorMsg ); ?>
 							</div>
 							<?php
@@ -163,11 +178,11 @@ class ConnectTab {
 				<tr>
 					<th><?php esc_html_e( 'Platform', 'spreadshop' ); ?></th>
 					<td>
-						<p><?php esc_html_e( 'We found shops matching your criteria on both platforms. Which one do you want to link?', 'spreadshop' ); ?></p>
 						<fieldset>
+							<legend><?php esc_html_e( 'We found shops matching your criteria on both platforms. Which one do you want to link?', 'spreadshop' ); ?></legend>
 							<label>
 								<input type="radio" name="platformSwitch" value="EU" checked
-										onchange="document.getElementById('confirmEU').hidden=false; document.getElementById('confirmNA').hidden=true;"/>
+										data-spreadshop-shows="confirmEU" data-spreadshop-hides="confirmNA"/>
 								<?php
 									printf(
 										/* translators: %s: shop id and name, for example 1376884 (Stechmuecke). */
@@ -179,7 +194,7 @@ class ConnectTab {
 							<br/>
 							<label>
 								<input type="radio" name="platformSwitch" value="NA"
-										onchange="document.getElementById('confirmEU').hidden=true; document.getElementById('confirmNA').hidden=false;"/>
+										data-spreadshop-shows="confirmNA" data-spreadshop-hides="confirmEU"/>
 								<?php
 									printf(
 										/* translators: %s: shop id and name, for example 1376884 (Stechmuecke). */
@@ -272,14 +287,20 @@ class ConnectTab {
 	/**
 	 * Renders the linked-shop summary and the disconnect action.
 	 *
-	 * @param string $platform Either 'EU' or 'NA'.
-	 * @param string $shopId   Numeric shop id.
-	 * @param string $locale   Locale the shop renders in.
+	 * @param string                    $platform   Either 'EU' or 'NA'.
+	 * @param string                    $shopId     Numeric shop id.
+	 * @param string                    $locale     Locale the shop renders in.
+	 * @param array<string, mixed>|null $testResult Outcome of a connection test, when one was just run.
 	 * @return void
 	 */
-	private static function renderConnected( $platform, $shopId, $locale ) {
+	private static function renderConnected( $platform, $shopId, $locale, $testResult = null ) {
 		?>
 		<h1><?php esc_html_e( 'Connected', 'spreadshop' ); ?></h1>
+		<?php if ( is_array( $testResult ) ) { ?>
+			<div class="<?php echo $testResult['ok'] ? 'sprd-ok-box' : 'sprd-error-box'; ?>" role="alert">
+				<?php echo esc_html( $testResult['message'] ); ?>
+			</div>
+		<?php } ?>
 		<p>
 			<?php
 			printf(
@@ -320,6 +341,13 @@ class ConnectTab {
 			</table>
 			<input type="hidden" name="spreadshopAdminForm" value="disconnect">
 			<?php submit_button( __( 'Disconnect', 'spreadshop' ) ); ?>
+		</form>
+
+		<form id="testform" name="testform" method="post">
+			<?php settings_fields( Constants::SPREADSHOP_SETTINGS_GROUP ); ?>
+			<p class="description"><?php esc_html_e( 'Not sure the shop is still reachable? Ask Spreadshirt right now.', 'spreadshop' ); ?></p>
+			<input type="hidden" name="spreadshopAdminForm" value="testConnection">
+			<?php submit_button( __( 'Test connection', 'spreadshop' ), 'secondary' ); ?>
 		</form>
 		<?php
 	}
@@ -400,6 +428,45 @@ class ConnectTab {
 	}
 
 	/**
+	 * Re-runs the shop lookup against the connected platform and reports what came back.
+	 *
+	 * Spreadshirt has changed the rules its edge enforces before, and when that happens the
+	 * only symptom is the shop quietly failing to load for visitors. This turns that into
+	 * something answerable on demand.
+	 *
+	 * @return array<string, mixed> Render instructions for the connected view.
+	 */
+	private static function handleTestConnection() {
+		$shopId   = get_option( 'spreadshopID' );
+		$platform = get_option( 'spreadshopPlatform' );
+		$response = self::fetchCoreData( $shopId, $platform );
+
+		if ( 200 === $response['status'] ) {
+			return array(
+				'page'       => 'connected',
+				'testResult' => array(
+					'ok'      => true,
+					'message' => __( 'Connection works. Spreadshirt answered and the shop was found.', 'spreadshop' ),
+				),
+			);
+		}
+
+		return array(
+			'page'       => 'connected',
+			'testResult' => array(
+				'ok'      => false,
+				'message' => self::describeFailure(
+					$response,
+					array(
+						'status' => 200,
+						'shopId' => 1,
+					)
+				),
+			),
+		);
+	}
+
+	/**
 	 * Unlinks the shop and drops its settings.
 	 *
 	 * @return array<string, string> Render instructions for the empty Connect form.
@@ -433,7 +500,7 @@ class ConnectTab {
 				'errorMsg' => __( 'Invalid shop ID', 'spreadshop' ),
 			);
 		}
-		if ( ! in_array( $platform, array( 'EU', 'NA' ), true ) ) {
+		if ( ! Platform::isValid( $platform ) ) {
 			return array(
 				'page'     => 'initial',
 				'errorMsg' => __( 'Invalid platform', 'spreadshop' ),
@@ -457,11 +524,11 @@ class ConnectTab {
 	 *
 	 * @param string $shopIdOrName Shop name or numeric id, already validated.
 	 * @param string $platform     Either 'EU' or 'NA'.
+	 * @param int    $attempt      Which attempt this is; see MAX_LOOKUP_ATTEMPTS.
 	 * @return array<string, mixed> Status, shop id, and on success the locales, base locale and name.
 	 */
-	private static function fetchCoreData( $shopIdOrName, $platform ) {
-		$tld      = $platform === 'EU' ? 'net' : 'com';
-		$url      = 'https://' . $shopIdOrName . '.myspreadshop.' . $tld . '/' . $shopIdOrName . '/shopData/core?agent=spreadshopWpPluginSignup';
+	private static function fetchCoreData( $shopIdOrName, $platform, $attempt = 1 ) {
+		$url      = Platform::shopOrigin( $shopIdOrName, $platform ) . '/' . $shopIdOrName . '/shopData/core?agent=spreadshopWpPluginSignup';
 		$response = wp_remote_get(
 			$url,
 			array(
@@ -492,6 +559,16 @@ class ConnectTab {
 
 		$payload = json_decode( wp_remote_retrieve_body( $response ), true );
 		if ( ! is_array( $payload ) || ! isset( $payload['shopData']['shopId'] ) ) {
+			/*
+			 * Spreadshirt occasionally answers 200 with an empty body. It is a blip -- the very
+			 * next request succeeds -- but reported as-is it looks to the admin like the shop is
+			 * broken. The lookup is a GET and carries no side effects, so one retry is safe.
+			 * Capped at two attempts: beyond that it is not a blip.
+			 */
+			if ( self::MAX_LOOKUP_ATTEMPTS > $attempt ) {
+				return self::fetchCoreData( $shopIdOrName, $platform, $attempt + 1 );
+			}
+
 			return array(
 				'status'      => -1,
 				'shopId'      => null,

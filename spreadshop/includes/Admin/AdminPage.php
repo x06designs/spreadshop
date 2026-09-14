@@ -30,9 +30,30 @@ class AdminPage {
 			'manage_options',
 			'Spreadshop',
 			array( __CLASS__, 'render' ),
-			plugins_url( 'style/images/sprd_icon.png', SPREADSHOP_FILE ),
+			self::menuIcon(),
 			99
 		);
+	}
+
+	/**
+	 * The menu icon, inlined as a data uri.
+	 *
+	 * Inlined rather than linked so it costs no request, and SVG rather than the 20x20 png it
+	 * replaces so it stays sharp on a high-density display. WordPress does not recolour a
+	 * data-uri icon to match the admin colour scheme, so this keeps the brand orange the png
+	 * always had.
+	 *
+	 * @return string
+	 */
+	private static function menuIcon() {
+		$svg = file_get_contents( plugin_dir_path( SPREADSHOP_FILE ) . 'style/images/sprd_icon.svg' );
+
+		if ( false === $svg ) {
+			return 'dashicons-cart';
+		}
+
+		// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- Data uri, not obfuscation.
+		return 'data:image/svg+xml;base64,' . base64_encode( $svg );
 	}
 
 	/**
@@ -53,6 +74,13 @@ class AdminPage {
 			plugins_url( 'style/style.css', SPREADSHOP_FILE ),
 			array(),
 			Constants::SPREADSHOP_VERSION
+		);
+		wp_enqueue_script(
+			'spreadshopAdminScript',
+			plugins_url( 'js/admin.js', SPREADSHOP_FILE ),
+			array(),
+			Constants::SPREADSHOP_VERSION,
+			true
 		);
 		Frame::renderTop( $inAdvancedTab, $isConnected );
 		$inAdvancedTab ? AdvancedTab::render( $renderData ) : ConnectTab::render( $renderData );
