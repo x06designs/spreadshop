@@ -114,6 +114,12 @@ packaging script on every push and pull request.
 * The post-activation redirect no longer fires during bulk activation, WP-CLI or cron
 * Removed PHP 8 warnings from unguarded request and response array access
 * Setup requires PHP 8.1 or newer: older TLS stacks (OpenSSL 1.1.1) are refused by Spreadshirt
+* Fixed the slug-based integration on block themes, where it rendered no site header or footer and, lacking a doctype, made the shop replace itself with an error
+* Fixed the slug-based integration presenting itself as a 404 to SEO plugins: Yoast marked the page noindex and Rank Math titled it "Page Not Found". Both are now correct, as is any other SEO plugin, because the underlying 404 state is corrected rather than patched per plugin
+* Fixed Push State URLs claiming unrelated pages: a slug of "shop" also captured /shopping-cart and every other path merely starting with those letters
+* Fixed the four Advanced checkboxes emitting invalid markup, and a broken label that stopped "Shop URL Path" responding to clicks
+* The admin screen is now translatable, with a translation template in languages/
+* Removed the unused spreadshopNaviEntry setting
 
 ### 1.6.6
 * Fixed a CSRF vulnerability
