@@ -1,0 +1,98 @@
+.sprd-container {
+    --fire: #ff9343;
+    --fire-darkest: #ff7e38;
+    --fire-light: #ffc182;
+    --fire-lighter: #fdd2ad;
+    --fire-lightest: #ffecd9;
+    --thunder-cloud: #006790;
+    --storm: #21a2d3;
+    --ice: #cde1ea;
+    --mist: #f3f7f9;
+
+}
+
+.sprd-header {
+    padding-top: 32px;
+}
+
+.sprd-header--logo {
+    max-width: 335px;
+}
+
+.sprd-settings td {
+    padding: 16px 10px;
+}
+
+.sprd-settings p {
+    margin-bottom: 16px !important;
+}
+
+.sprd-highlighted-txt {
+    color: var(--thunder-cloud);
+}
+
+.wp-core-ui select:focus,
+.wp-core-ui input[type=text]:focus,
+.wp-core-ui input[type=radio]:focus,
+.wp-core-ui input[type=checkbox]:focus {
+    border-color: var(--fire);
+    color: #333;
+    box-shadow: 0 0 0 1px var(--fire);
+}
+
+.wp-core-ui input[type=checkbox]:checked::before {
+    content: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%333%27%2F%3E%3C%2Fsvg%3E");
+}
+
+.wp-core-ui .button-primary {
+    background: var(--fire-darkest);
+    border-color: var(--fire-darkest);
+    box-shadow: 0 1px 0 var(--fire-darkest);
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px var(--fire-darkest), 1px 0 1px var(--fire-darkest), 0 1px 1px var(--fire-darkest), -1px 0 1px var(--fire-darkest);
+}
+
+.wp-core-ui .button-primary.focus, .wp-core-ui .button-primary.hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:hover {
+    background: var(--fire);
+    border-color: var(--fire);
+    color: #fff;
+}
+
+.sprd-container a {
+    color: var(--fire-darkest);
+}
+
+.sprd-container a:hover {
+    color: var(--fire);
+}
+
+.sprd-container .nav-tab {
+    color: #777 !important;
+}
+
+.sprd-container .nav-tab-active {
+    color: #333 !important;
+}
+
+.sprd-links a {
+    display: block;
+    line-height: 32px;
+}
+
+.sprd-error-box {
+    border: 1px solid #cf0000;
+    background-color: #ffebe8;
+    width: fit-content;
+    padding: 6px;
+    border-radius: 3px;
+    margin-bottom: 6px;
+}
+
+.sprd-error-box > span {
+    font-weight: bold;
+}
+
+input[type=radio]:checked::before {
+    background-color: var(--fire-darkest);
+}
