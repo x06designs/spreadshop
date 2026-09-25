@@ -2,40 +2,40 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Spreadshop (Maintained Fork) 1.8.1\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/src\n"
+"Project-Id-Version: Spreadshop (Maintained Fork) 1.9.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/spreadshop\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-14T18:55:47+00:00\n"
+"POT-Creation-Date: 2026-09-25T18:31:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: spreadshop\n"
 
 #. Plugin Name of the plugin
-#: spreadshop.php
+#: spreadshop.php:3
 msgid "Spreadshop (Maintained Fork)"
 msgstr ""
 
 #. Plugin URI of the plugin
-#: spreadshop.php
+#: spreadshop.php:4
 msgid "https://github.com/x06designs/spreadshop"
 msgstr ""
 
 #. Description of the plugin
-#: spreadshop.php
+#: spreadshop.php:5
 msgid "This plugin integrates a Spreadshirt Shop into WordPress. Community-maintained fork of the discontinued official plugin."
 msgstr ""
 
 #. Author of the plugin
-#: spreadshop.php
+#: spreadshop.php:11
 msgid "X-06 Designs"
 msgstr ""
 
 #. Author URI of the plugin
-#: spreadshop.php
+#: spreadshop.php:12
 msgid "https://github.com/x06designs"
 msgstr ""
 
@@ -97,56 +97,60 @@ msgstr ""
 msgid "Check this option to avoid a second separate burger-menu from showing up on your page if your site already uses one."
 msgstr ""
 
-#: includes/Admin/AdvancedTab.php:170
+#: includes/Admin/AdvancedTab.php:166
+msgid "With Sidebar navigation on, the shop shows the Categories button instead; unchecked, it shows its own burger menu."
+msgstr ""
+
+#: includes/Admin/AdvancedTab.php:175
 msgid "Alternative slug-based integration"
 msgstr ""
 
 #. translators: %s: the [spreadshop] shortcode, shown in bold.
-#: includes/Admin/AdvancedTab.php:175
+#: includes/Admin/AdvancedTab.php:180
 #, php-format
 msgid "The recommended way of embedding your Spreadshop is to use the %s short code."
 msgstr ""
 
-#: includes/Admin/AdvancedTab.php:180
+#: includes/Admin/AdvancedTab.php:185
 msgid "Alternatively, you can define a slug (url path) here to embed the Spreadshop."
 msgstr ""
 
-#: includes/Admin/AdvancedTab.php:181
-#: includes/Admin/Frame.php:68
+#: includes/Admin/AdvancedTab.php:186
+#: includes/Admin/Frame.php:69
 msgid "Read more in our FAQ >"
 msgstr ""
 
-#: includes/Admin/AdvancedTab.php:188
+#: includes/Admin/AdvancedTab.php:193
 msgid "Shop URL Path (Optional)"
 msgstr ""
 
-#: includes/Admin/AdvancedTab.php:194
+#: includes/Admin/AdvancedTab.php:199
 msgid "Define a URL path where you want your Spreadshop to show up on your WordPress website."
 msgstr ""
 
-#: includes/Admin/AdvancedTab.php:199
+#: includes/Admin/AdvancedTab.php:204
 msgid "Push State URLs"
 msgstr ""
 
-#: includes/Admin/AdvancedTab.php:206
+#: includes/Admin/AdvancedTab.php:211
 msgid "Optimize URL"
 msgstr ""
 
-#: includes/Admin/AdvancedTab.php:208
+#: includes/Admin/AdvancedTab.php:213
 msgid "Removes the hashbangs (as shown in the example below) from your URLs"
 msgstr ""
 
 #. translators: %s: the "Shop URL Path" setting name, shown in bold.
-#: includes/Admin/AdvancedTab.php:214
+#: includes/Admin/AdvancedTab.php:219
 #, php-format
 msgid "This only works when using the %s method instead of the shortcode."
 msgstr ""
 
-#: includes/Admin/AdvancedTab.php:215
+#: includes/Admin/AdvancedTab.php:220
 msgid "Shop URL Path"
 msgstr ""
 
-#: includes/Admin/AdvancedTab.php:223
+#: includes/Admin/AdvancedTab.php:228
 msgid "Save Changes"
 msgstr ""
 
@@ -331,6 +335,253 @@ msgstr ""
 msgid "Advanced"
 msgstr ""
 
-#: includes/Admin/Frame.php:61
+#: includes/Admin/Frame.php:62
 msgid "Preview Shop"
 msgstr ""
+
+#: includes/Admin/LayoutSection.php:36
+msgid "Layout"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:37
+msgid "Restyle the shop's own navigation, footer, product tiles and product page so the shop takes on your theme's fonts and colours, unless Load Spreadshop Fonts is on, in which case the shop keeps its own fonts. Every option is off by default and each works on its own."
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:41
+msgid "Sidebar navigation"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:41
+msgid "Show the shop's navigation, search and basket as a sidebar"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:41
+msgid "On small screens the sidebar becomes a bar with a categories button."
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:42
+msgid "Compact footer"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:42
+msgid "Collapse the shop's footer into a single row"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:42
+msgid "The service and legal links stay visible: Spreadshirt is the seller, and those pages are theirs."
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:43
+msgid "Product cards"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:43
+msgid "Add product details to the product tiles"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:43
+msgid "Only lists of products get cards. The design list, which is the shop's default start page, shows designs rather than products and stays as it is."
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:44
+msgid "Product page"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:44
+msgid "Restyle the product page"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:44
+msgid "Separates the sections of the product page, shows description and size guide as tabs, and tidies the design, tags and sharing block."
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:46
+#: includes/Admin/LayoutSection.php:164
+msgid "Card fields"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:50
+#: includes/Admin/LayoutSection.php:197
+msgid "Start page"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:54
+#: includes/Admin/LayoutSection.php:220
+msgid "Colours"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:97
+msgid "Product type"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:98
+msgid "Price"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:99
+msgid "Colour swatches"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:100
+#: js/layout.js:165
+msgid "Sizes"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:101
+msgid "Second image on hover"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:112
+msgid "Accent"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:113
+msgid "Text on accent"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:114
+msgid "Background"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:115
+msgid "Text"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:116
+msgid "Secondary text"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:117
+msgid "Lines"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:180
+msgid "Used when Product cards is on. The product name is always shown first; the other fields follow in the order chosen here."
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:192
+msgid "Designs (the shop default)"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:193
+msgid "All products"
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:207
+msgid "A Start Token above, or a deeplink= parameter on the short code, takes precedence."
+msgstr ""
+
+#: includes/Admin/LayoutSection.php:232
+msgid "Leave a colour empty to use your theme's. A theme can also set these as CSS custom properties, such as --spreadshop-accent; a colour chosen here overrides the theme. The colours apply once at least one layout option is on."
+msgstr ""
+
+#: js/admin-card-fields.js:58
+msgid "Chosen card fields"
+msgstr ""
+
+#: js/admin-card-fields.js:63
+msgid "Add a card field"
+msgstr ""
+
+#: js/admin-card-fields.js:82
+msgid "Card fields you can add"
+msgstr ""
+
+#: js/admin-card-fields.js:88
+msgid "Type to filter, pick a field with the arrow keys and add it with Enter. Backspace in the empty field removes the last field. On a field, Alt+Arrow Up and Alt+Arrow Down move it."
+msgstr ""
+
+#: js/admin-card-fields.js:151
+msgid "Every field is already shown."
+msgstr ""
+
+#: js/admin-card-fields.js:152
+msgid "No field matches."
+msgstr ""
+
+#. translators: %s: a card field, e.g. "Price".
+#: js/admin-card-fields.js:192
+#, js-format
+msgid "Move %s up"
+msgstr ""
+
+#. translators: %s: a card field, e.g. "Price".
+#: js/admin-card-fields.js:194
+#, js-format
+msgid "Move %s down"
+msgstr ""
+
+#. translators: %s: a card field, e.g. "Price".
+#: js/admin-card-fields.js:196
+#, js-format
+msgid "Remove %s"
+msgstr ""
+
+#. translators: %s: a card field, e.g. "Price".
+#: js/admin-card-fields.js:259
+#, js-format
+msgid "%s added."
+msgstr ""
+
+#. translators: %s: a card field, e.g. "Price".
+#: js/admin-card-fields.js:271
+#: js/admin-card-fields.js:400
+#, js-format
+msgid "%s removed."
+msgstr ""
+
+#. translators: %s: a card field, e.g. "Price".
+#: js/admin-card-fields.js:293
+#, js-format
+msgid "%s is already first."
+msgstr ""
+
+#. translators: %s: a card field, e.g. "Price".
+#: js/admin-card-fields.js:295
+#, js-format
+msgid "%s is already last."
+msgstr ""
+
+#. translators: 1: a card field, e.g. "Price"; 2: its new position; 3: how many fields are chosen.
+#: js/admin-card-fields.js:308
+#, js-format
+msgid "%1$s moved to position %2$d of %3$d."
+msgstr ""
+
+#. translators: %s: a shop category, e.g. "Women".
+#: js/layout-nav.js:101
+#, js-format
+msgid "Sub-pages of %s"
+msgstr ""
+
+#: js/layout-nav.js:122
+msgid "Categories"
+msgstr ""
+
+#: js/layout-nav.js:157
+msgid "Search"
+msgstr ""
+
+#. translators: %d: how many items are in the basket.
+#: js/layout-nav.js:166
+#, js-format
+msgid "Basket, %d item"
+msgid_plural "Basket, %d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: js/layout-nav.js:167
+msgid "Basket"
+msgstr ""
+
+#: js/layout-nav.js:169
+msgid "Close filters"
+msgstr ""
+
+#. translators: %d: how many colours the product comes in.
+#: js/layout.js:132
+#, js-format
+msgid "%d colour"
+msgid_plural "%d colours"
+msgstr[0] ""
+msgstr[1] ""

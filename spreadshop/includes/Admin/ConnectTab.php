@@ -489,7 +489,7 @@ class ConnectTab {
 	 * @return array<string, string> Render instructions for the empty Connect form.
 	 */
 	private static function handleDisconnect() {
-		Settings::deleteAll();
+		Settings::deleteConnection();
 		return array(
 			'page'     => 'initial',
 			'errorMsg' => '',

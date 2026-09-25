@@ -45,6 +45,7 @@ class Frame {
 					?>
 				</nav>
 				<section class="sprd-settings wrap">
+					<hr class="wp-header-end" />
 		<?php
 	}
 

@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SpreadshopLayoutSettings",
+  "description": "The layout options: which parts of the shop's own chrome are restyled, which fields a product card shows, and the colour overrides.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "spreadshopLayoutSidebar",
+    "spreadshopLayoutCompactFooter",
+    "spreadshopLayoutCards",
+    "spreadshopLayoutProductPage",
+    "spreadshopCardFields",
+    "spreadshopStartList",
+    "spreadshopColors"
+  ],
+  "properties": {
+    "spreadshopLayoutSidebar": {
+      "description": "Shows the shop's header as a sidebar navigation.",
+      "type": "integer",
+      "enum": [0, 1],
+      "default": 0
+    },
+    "spreadshopLayoutCompactFooter": {
+      "description": "Collapses the shop's footer into one row of service and legal links.",
+      "type": "integer",
+      "enum": [0, 1],
+      "default": 0
+    },
+    "spreadshopLayoutCards": {
+      "description": "Adds product details from the shop's own data to the list tiles.",
+      "type": "integer",
+      "enum": [0, 1],
+      "default": 0
+    },
+    "spreadshopLayoutProductPage": {
+      "description": "Restyles the product page: separated sections, tabs for its details, a tidier design, tags and sharing block.",
+      "type": "integer",
+      "enum": [0, 1],
+      "default": 0
+    },
+    "spreadshopCardFields": {
+      "description": "Fields a product card shows after the name, in display order. hoverImage sits on the image, so its position has no effect and it is kept last.",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["productType", "price", "swatches", "sizes", "hoverImage"]
+      },
+      "default": ["price", "swatches", "hoverImage"]
+    },
+    "spreadshopStartList": {
+      "description": "What the shop opens on when no start token or deeplink is set.",
+      "type": "string",
+      "enum": ["designs", "products"],
+      "default": "designs"
+    },
+    "spreadshopColors": {
+      "description": "Colour overrides; an absent key falls back to the theme's mapping, then to the plugin default.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "accent": { "type": "string", "pattern": "^#[0-9a-f]{6}$" },
+        "accentText": { "type": "string", "pattern": "^#[0-9a-f]{6}$" },
+        "background": { "type": "string", "pattern": "^#[0-9a-f]{6}$" },
+        "text": { "type": "string", "pattern": "^#[0-9a-f]{6}$" },
+        "muted": { "type": "string", "pattern": "^#[0-9a-f]{6}$" },
+        "border": { "type": "string", "pattern": "^#[0-9a-f]{6}$" }
+      },
+      "default": {}
+    }
+  }
+}

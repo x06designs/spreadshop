@@ -72,6 +72,10 @@ Three bite, or will:
 | Polyglot components | No block, REST or Elementor bindings exist, and none are wanted |
 | Inpsyde Modularity | Judgment call, see the open decision below |
 
+> Superseded for the web-layer premise by [shop-layout.md](shop-layout.md): from 1.9.0 the
+> plugin ships plain, unbuilt JavaScript and CSS for its layout options. The other reasons
+> for not adopting Nx, Modularity and a Vite build still hold.
+
 ## 2. Phases
 
 Each phase leaves the plugin installable and working. No phase depends on a later one.

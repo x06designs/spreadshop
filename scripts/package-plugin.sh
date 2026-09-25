@@ -40,7 +40,9 @@ echo "-- checking for development files"
 LEAKED="$(find "$OUT" \
   \( -name 'composer.json' -o -name 'composer.lock' -o -name 'vendor' \
      -o -name 'tests' -o -name 'phpunit.xml*' -o -name 'phpcs.xml*' -o -name 'phpstan.neon*' \
-     -o -name 'node_modules' -o -name '.git*' \) -print)"
+     -o -name 'node_modules' -o -name '.git*' \
+     -o -name 'package.json' -o -name 'package-lock.json' -o -name 'tsconfig*.json' \
+     -o -name 'biome.json' -o -name '*.d.ts' -o -name '*.test.js' \) -print)"
 if [[ -n "$LEAKED" ]]; then
   echo "Development files found in the plugin directory:"
   echo "$LEAKED"
@@ -48,10 +50,18 @@ if [[ -n "$LEAKED" ]]; then
 fi
 
 # A missing bootstrap or autoloader produces a zip that fatals on activation, which is the
-# one failure mode worth being paranoid about.
-for required in "spreadshop.php" "includes/Autoloader.php" "includes/Plugin.php" "templates/embed-page.php"; do
+# one failure mode worth being paranoid about. The layout schema is in the same class: every
+# layout sanitiser throws without it.
+for required in "spreadshop.php" "includes/Autoloader.php" "includes/Plugin.php" "templates/embed-page.php" \
+  "schema/layout.schema.json" "style/layout/tokens.css" "style/layout/sidebar.css" \
+  "style/layout/compact-footer.css" "style/layout/cards.css" "style/layout/product-page.css" \
+  "js/layout-observe.js" "js/layout-nav.js" "js/layout-data.js" "js/layout.js" "js/layout-product.js"; do
   [[ -f "$OUT/$required" ]] || { echo "Missing from the build: $required"; exit 1; }
 done
+# The JavaScript translations are named after an md5 of their script path, so they are matched
+# by pattern rather than by name.
+compgen -G "$OUT/languages/spreadshop-de_DE-*.json" >/dev/null \
+  || { echo "Missing from the build: languages/spreadshop-de_DE-<md5>.json"; exit 1; }
 
 echo "-- writing dist/spreadshop-$VERSION.zip"
 rm -f "dist/spreadshop-$VERSION.zip"

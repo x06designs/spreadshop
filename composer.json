@@ -16,7 +16,8 @@
         "phpunit/phpunit": "^9.6",
         "yoast/phpunit-polyfills": "^1.1",
         "brain/monkey": "^2.6",
-        "yoast/wp-test-utils": "^1.2"
+        "yoast/wp-test-utils": "^1.2",
+        "wp-cli/i18n-command": "^2.6"
     },
     "config": {
         "allow-plugins": {
@@ -36,7 +37,9 @@
             "@phpstan",
             "@test:unit"
         ],
-        "test:unit": "phpunit --testsuite unit"
+        "test:unit": "phpunit --testsuite unit",
+        "i18n": "bash scripts/i18n.sh",
+        "i18n:check": "bash scripts/i18n.sh --check"
     },
     "autoload-dev": {
         "psr-4": {

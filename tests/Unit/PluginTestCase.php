@@ -9,6 +9,7 @@ namespace Spreadshop\Tests\Unit;
 
 use Brain\Monkey\Functions;
 use Spreadshop\Embed\SlugRoute;
+use Spreadshop\Layout\Assets;
 use Yoast\WPTestUtils\BrainMonkey\TestCase;
 
 /**
@@ -38,5 +39,9 @@ abstract class PluginTestCase extends TestCase {
 		$owns = new \ReflectionProperty( SlugRoute::class, 'ownsRequest' );
 		$owns->setAccessible( true );
 		$owns->setValue( null, null );
+
+		$enqueued = new \ReflectionProperty( Assets::class, 'isEnqueued' );
+		$enqueued->setAccessible( true );
+		$enqueued->setValue( null, false );
 	}
 }

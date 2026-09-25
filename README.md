@@ -24,8 +24,10 @@ You already have a Spreadshop. This plugin puts it on your WordPress site, two w
 | `[spreadshop]` short code | You want the shop inside a page you already control. **Recommended.** |
 | Slug-based route | You want the shop to own a url path of its own, e.g. `/shop`. |
 
-Products, designs, prices, payouts and the shop's appearance stay in the Spreadshop Partner
-Area. This plugin only displays what is already there.
+Products, designs, prices and payouts stay in the Spreadshop Partner Area. This plugin
+displays what is already there and, if you want, restyles the shop's navigation, footer,
+product tiles and product page so they take on your theme's fonts and colours (see
+[Layout](#layout)).
 
 ## Requirements
 
@@ -63,6 +65,31 @@ Everything below is optional and lives on the **Advanced** tab.
 | Shop URL Path | Serves the shop at a path of its own, instead of the short code |
 | Push State URLs | Drops the `#!/` from shop urls. Needs the path method |
 
+### Layout
+
+Also on the **Advanced** tab. Every option is off by default, each works on its own, and
+switching one off restores the shop exactly as Spreadshirt draws it.
+
+| Setting | What it does |
+|---|---|
+| Sidebar navigation | Logo, search and basket as a bar across the shop, the category tree as a sidebar with foldable departments. On small screens: a "Categories" button that opens the tree |
+| Compact footer | The footer's link columns as an even grid, payment marks below. The service and legal links stay |
+| Product cards | Adds the product name and the chosen card fields (product type, price, colour swatches, sizes, second image on hover) to the product tiles |
+| Product page | Separates the product page's sections, shows description and size guide as tabs, tidies the design, tags and sharing block |
+| Card fields | Which fields a card shows, and in which order |
+| Start page | Open on the design list (the shop default) or on all products |
+| Colours | Accent, text, background and lines. Empty means "use the theme's" |
+
+A theme can set the same colours as CSS custom properties, which a colour chosen here
+overrides: `--spreadshop-accent`, `--spreadshop-accent-text`, `--spreadshop-background`,
+`--spreadshop-text`, `--spreadshop-muted`, `--spreadshop-border`, plus `--spreadshop-hover`,
+`--spreadshop-badge`, `--spreadshop-badge-text`, `--spreadshop-focus`,
+`--spreadshop-font-display`, `--spreadshop-sticky-offset` and `--spreadshop-sidebar-width`.
+
+The layout options restyle markup Spreadshirt does not document. If a Spreadshirt release
+changes it, the affected option can look off until the plugin follows; product cards fall
+back to the plain image tile rather than showing half a card.
+
 A page may contain **one** `[spreadshop]`. A second renders nothing, because Spreadshirt's
 shop client can only drive one embed per document.
 
@@ -71,6 +98,10 @@ shop client can only drive one embed per document.
 The shop is loaded from Spreadshirt's servers as soon as the page renders, which discloses
 your visitor's IP address and user agent to them. The plugin sets no cookies of its own and
 loads nothing from Google.
+
+With **Product cards** on, the plugin reads each product list the shop loads a second time,
+from the same Spreadshirt host, and the second image on hover is fetched from Spreadshirt's
+image server. No other host is added and nothing is stored.
 
 If your site is subject to the GDPR you need to name Spreadshirt as a recipient in your
 privacy policy, and gate the page behind your consent manager if you run one. The
@@ -95,17 +126,33 @@ composer fix         # auto-fix what phpcbf can
 composer phpstan     # static analysis, level 6
 composer test:unit   # unit suite, no WordPress required
 composer check       # all three
+composer i18n        # regenerate .pot, merge the .po, compile .mo/.l10n.php/JS .json
+composer i18n:check  # fails on stale translation files or untranslated strings
+
+npm ci
+npm run lint         # Biome: lint + format check (warnings fail)
+npm run typecheck    # tsc over the plain JS via JSDoc (checkJs)
+npm run gate:sinks   # fails on innerHTML/outerHTML/insertAdjacentHTML/document.write
+npm test             # node:test suite in tests/js
+npm run check        # all four
+
+# Browser checks against a page that embeds the shop with every layout option on
+BASE_URL=https://example.lndo.site/shop/ npm run e2e    # fixture lists + live data
+BASE_URL=https://example.lndo.site/shop/ npm run smoke  # before a release: Spreadshirt's markup and list data
 
 ./scripts/package-plugin.sh   # -> dist/spreadshop/ and dist/spreadshop-<version>.zip
 ```
+
+The JavaScript ships unbuilt, as classic scripts: the npm tooling checks it but never
+transforms it, so `spreadshop/` stays exactly what ships.
 
 The unit suite runs on Brain Monkey and needs no WordPress install. Anything that genuinely
 depends on WordPress — the admin screens, upgrading in place, block-theme rendering, the SEO
 plugin interaction — is verified by running the plugin in a real WordPress rather than by
 mocking one.
 
-CI runs lint, static analysis, the unit suite on PHP 8.1 and 8.4, `composer audit` and the
-packaging script on every push and pull request.
+CI runs lint, static analysis, the unit suite on PHP 8.1 and 8.4, `composer audit`,
+`npm run check`, `npm audit` and the packaging script on every push and pull request.
 
 ## Licence and attribution
 
@@ -121,6 +168,17 @@ affiliated with, or supported by sprd.net AG or IronShark GmbH.
 ---
 
 ## Changelog
+
+### 1.9.0
+* Layout options on the Advanced tab: sidebar navigation, compact footer, product cards and product page, each off by default and independent of the others
+* Product cards show the product name, and optionally product type, price, colour swatches, sizes and a second image on hover, taken from the shop's own list data
+* The sidebar's category tree folds per department; on small screens a "Categories" button opens it
+* Description and size guide on the product page become keyboard-accessible tabs
+* Colour settings, and CSS custom properties a theme can set, adapt the shop to the site's palette
+* Start page option: open the shop on its design list or on all products
+* Accessibility: product tiles are announced as links with the product name; search, basket (with item count) and the filter dialog's close button get names in the site language; Escape closes the filter dialog; sold-out sizes are marked as disabled; buttons stay readable under themes that restyle every button on hover
+* The shop's wrapper no longer adds a second `main` landmark to the page
+* WordPress notices on the settings screen appear above the settings again instead of in the middle of them
 
 ### 1.8.1
 * Hardening: every setting is now cleaned on the way in whichever route wrote it. Registering an option also exposes it to WordPress's own settings handler, which does not pass through this plugin's forms, so their validation did not run on that path. A stored shop ID decides which host the shop is loaded from, so this matters most there
