@@ -1,0 +1,265 @@
+/*
+ * Product cards: the product list becomes an even grid of square frames with the badge on the
+ * image, and the numbered pagination takes the button style. The name, price and other card
+ * fields are added to each tile by js/layout.js.
+ */
+.spreadshop-layout--cards #myShop .SprdMain .sprd-product-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 14px;
+  align-items: start;
+  display: grid;
+  padding: 0;
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-product-list-item,
+.spreadshop-layout--cards #myShop .SprdMain .sprd-product-list-item--hover {
+  position: relative;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  display: grid;
+  margin: 0;
+  box-shadow: none;
+  border: 0;
+  width: auto;
+  min-width: 0;
+  padding: 0;
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-product-list-item__link {
+  margin: 0;
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-product-list-item__image {
+  border: 0;
+  background-color: color-mix(in oklch, var(--_spreadshop-text) 5%, var(--_spreadshop-background));
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-product-list-item__image img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spreadshop-layout--cards
+  #myShop
+  .SprdMain
+  .sprd-product-list-item:hover
+  .sprd-product-list-item__image
+  img {
+  transform: scale(1.035);
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-product-list-item__badge-container {
+  z-index: 1;
+  top: 12px;
+  left: 12px;
+  gap: 6px;
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-product-list-item__badge {
+  padding: 4px 10px;
+  background-color: var(--_spreadshop-badge);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--_spreadshop-badge-text);
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-pagination {
+  grid-column: 1 / -1;
+  gap: 8px;
+  margin: clamp(40px, 5vw, 64px) 0 0;
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-pagination__pages {
+  flex: none;
+  gap: 8px;
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-pagination__button {
+  margin: 0;
+  border: 2px solid var(--_spreadshop-text);
+  border-radius: 0;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  font-size: 18px;
+  line-height: 1;
+  font-family: var(--spreadshop-font-display, inherit);
+  font-weight: 700;
+  color: var(--_spreadshop-text);
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-pagination__button:hover,
+.spreadshop-layout--cards #myShop .SprdMain .sprd-pagination__page--current {
+  background-color: var(--_spreadshop-text);
+  color: var(--_spreadshop-background);
+}
+
+@media (min-width: 768px) {
+  .spreadshop-layout--cards #myShop .SprdMain .sprd-product-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(28px, 3vw, 44px) clamp(18px, 2.2vw, 32px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .spreadshop-layout--cards #myShop .SprdMain .sprd-product-list--4cols {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .spreadshop-layout--sidebar.spreadshop-layout--cards #myShop .SprdMain .sprd-product-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .spreadshop-layout--sidebar.spreadshop-layout--cards #myShop .SprdMain .sprd-product-list--4cols {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spreadshop-layout--cards #myShop .SprdMain .sprd-product-list-item__image img {
+    transition: none;
+  }
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-product-list > .sprd-activefilters-lp {
+  grid-column: 1 / -1;
+  gap: 8px 16px;
+  align-items: center;
+  padding: 0;
+  font-size: 14px;
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-activefilters-lp__title {
+  font-weight: 600;
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-activefilters-lp__item {
+  margin: 0;
+  border: 1.5px solid var(--_spreadshop-text);
+  width: auto;
+  max-width: 100%;
+  padding: 4px 12px;
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-activefilters-lp__reset {
+  margin: 0;
+  width: auto;
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .sprd-product-list-item__num-products {
+  opacity: 1;
+  color: var(--_spreadshop-muted);
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .spreadshop-card__name {
+  display: block;
+  margin-top: 14px;
+  font-size: clamp(19px, 1.8vw, 26px);
+  line-height: 1.1;
+  font-family: var(--spreadshop-font-display, inherit);
+  font-weight: 700;
+  text-align: left;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  color: var(--_spreadshop-text);
+}
+
+.spreadshop-layout--cards
+  #myShop
+  .SprdMain
+  .sprd-product-list-item__link:hover
+  .spreadshop-card__name {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  color: var(--_spreadshop-hover);
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .spreadshop-card__details {
+  gap: 10px;
+  display: grid;
+  text-align: left;
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .spreadshop-card__type,
+.spreadshop-layout--cards #myShop .SprdMain .spreadshop-card__sizes {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--_spreadshop-muted);
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .spreadshop-card__foot {
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .spreadshop-card__price {
+  font-size: 17px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--_spreadshop-text);
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .spreadshop-card__swatches {
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+  display: flex;
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .spreadshop-card__swatch {
+  display: block;
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--_spreadshop-text) 22%, transparent);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background: var(--spreadshop-swatch);
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .spreadshop-card__swatch-more {
+  margin-left: 4px;
+  font-size: 13px;
+  color: var(--_spreadshop-muted);
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .spreadshop-card__hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spreadshop-layout--cards
+  #myShop
+  .SprdMain
+  .sprd-product-list-item__link:is(:hover, :focus-visible)
+  .spreadshop-card__hover {
+  opacity: 1;
+}
+
+.spreadshop-layout--cards #myShop .SprdMain .spreadshop-sr-only {
+  position: absolute;
+  overflow: hidden;
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spreadshop-layout--cards #myShop .SprdMain .spreadshop-card__hover {
+    transition: none;
+  }
+}

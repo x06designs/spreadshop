@@ -7,6 +7,8 @@
 
 namespace Spreadshop\Embed;
 
+use Spreadshop\Layout\Assets;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -36,6 +38,8 @@ class Shortcode {
 			return '';
 		}
 		self::$alreadyRun = true;
+
+		Assets::enqueue();
 
 		$startToken = is_array( $atts ) && isset( $atts['deeplink'] ) ? $atts['deeplink'] : null;
 		return Renderer::render( null, $startToken );

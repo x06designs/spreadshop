@@ -11,6 +11,7 @@ use Spreadshop\Admin\AdminPage;
 use Spreadshop\Embed\ResourceHints;
 use Spreadshop\Embed\Shortcode;
 use Spreadshop\Embed\SlugRoute;
+use Spreadshop\Layout\Assets;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -36,6 +37,7 @@ class Plugin {
 		add_filter( 'template_include', array( SlugRoute::class, 'filterTemplate' ), 99 );
 		add_shortcode( 'spreadshop', array( Shortcode::class, 'render' ) );
 		add_filter( 'wp_resource_hints', array( ResourceHints::class, 'filter' ), 10, 2 );
+		add_action( 'wp_enqueue_scripts', array( Assets::class, 'enqueueForEmbed' ) );
 
 		/*
 		 * The callback NAME is persisted in the uninstall_plugins option, so it has to stay a

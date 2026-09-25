@@ -1,0 +1,96 @@
+/*
+ * The colour and type tokens every layout option draws from.
+ *
+ * A theme sets the public --spreadshop-* properties (on :root or anywhere above the shop); a
+ * colour chosen in the plugin settings is printed on #myShop and so wins over the theme. The
+ * fallbacks end in the shop's own palette, so switching an option on without choosing a colour
+ * keeps the colours the shop already had.
+ *
+ * The --_spreadshop-* properties are internal: they resolve on .SprdMain, below #myShop, so a
+ * value set on #myShop is seen. Some themes restyle every button:hover; the rules at the end
+ * keep the shop's own buttons readable.
+ */
+:is(
+    .spreadshop-layout--sidebar,
+    .spreadshop-layout--compact-footer,
+    .spreadshop-layout--cards,
+    .spreadshop-layout--product-page
+  )
+  #myShop
+  .SprdMain {
+  --_spreadshop-accent: var(--spreadshop-accent, var(--sprd-main2, #000));
+  --_spreadshop-accent-text: var(--spreadshop-accent-text, var(--sprd-cta-text-color, #fff));
+  --_spreadshop-background: var(--spreadshop-background, var(--sprd-main3, #fff));
+  --_spreadshop-text: var(--spreadshop-text, var(--sprd-sub2, #22262d));
+  --_spreadshop-muted: var(
+    --spreadshop-muted,
+    color-mix(in oklch, var(--_spreadshop-text) 62%, var(--_spreadshop-background))
+  );
+  --_spreadshop-border: var(
+    --spreadshop-border,
+    color-mix(in oklch, var(--_spreadshop-text) 16%, var(--_spreadshop-background))
+  );
+  --_spreadshop-badge: var(--spreadshop-badge, var(--_spreadshop-accent));
+  --_spreadshop-badge-text: var(--spreadshop-badge-text, var(--_spreadshop-accent-text));
+  --_spreadshop-focus: var(--spreadshop-focus, var(--_spreadshop-text));
+  --_spreadshop-hover: var(--spreadshop-hover, var(--_spreadshop-accent));
+  --_spreadshop-sticky-offset: var(--spreadshop-sticky-offset, 0px);
+  --_spreadshop-sidebar-width: var(--spreadshop-sidebar-width, 248px);
+}
+
+:is(
+    .spreadshop-layout--sidebar,
+    .spreadshop-layout--compact-footer,
+    .spreadshop-layout--cards,
+    .spreadshop-layout--product-page
+  )
+  #myShop
+  .SprdMain
+  #sprd-container {
+  background-color: var(--_spreadshop-background);
+  color: var(--_spreadshop-text);
+}
+
+:is(
+    .spreadshop-layout--sidebar,
+    .spreadshop-layout--compact-footer,
+    .spreadshop-layout--cards,
+    .spreadshop-layout--product-page
+  )
+  #myShop
+  .SprdMain
+  :focus-visible {
+  outline: 3px solid var(--_spreadshop-focus);
+  outline-offset: 4px;
+}
+
+:is(
+    .spreadshop-layout--sidebar,
+    .spreadshop-layout--compact-footer,
+    .spreadshop-layout--cards,
+    .spreadshop-layout--product-page
+  )
+  #myShop
+  .SprdMain
+  :is(
+    .sprd-button-secondary-cta-ghost:not(.sprd-c-m2),
+    .sprd-detail-images__view,
+    .sprd-detail-info__further-details-btn,
+    .dropup__toggle
+  ):is(:hover, :focus) {
+  background-color: transparent;
+  color: var(--_spreadshop-text);
+}
+
+:is(
+    .spreadshop-layout--sidebar,
+    .spreadshop-layout--compact-footer,
+    .spreadshop-layout--cards,
+    .spreadshop-layout--product-page
+  )
+  #myShop
+  .SprdMain
+  .sprd-detail-social__share-btn:is(:hover, :focus-visible) {
+  background-color: transparent;
+  color: var(--_spreadshop-hover);
+}

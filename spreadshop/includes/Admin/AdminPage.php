@@ -82,8 +82,39 @@ class AdminPage {
 			Constants::SPREADSHOP_VERSION,
 			true
 		);
+		if ( $inAdvancedTab && $isConnected ) {
+			self::enqueueLayoutAssets();
+		}
 		Frame::renderTop( $inAdvancedTab, $isConnected );
 		$inAdvancedTab ? AdvancedTab::render( $renderData ) : ConnectTab::render( $renderData );
 		Frame::renderBottom( $isConnected );
+	}
+
+	/**
+	 * Loads what the Layout section needs: core's colour picker and the card-field chip list.
+	 *
+	 * @return void
+	 */
+	private static function enqueueLayoutAssets() {
+		wp_enqueue_style( 'wp-color-picker' );
+		wp_enqueue_script(
+			'spreadshopAdminColors',
+			plugins_url( 'js/admin-colors.js', SPREADSHOP_FILE ),
+			array( 'wp-color-picker' ),
+			Constants::SPREADSHOP_VERSION,
+			true
+		);
+		wp_enqueue_script(
+			'spreadshopAdminCardFields',
+			plugins_url( 'js/admin-card-fields.js', SPREADSHOP_FILE ),
+			array( 'wp-i18n' ),
+			Constants::SPREADSHOP_VERSION,
+			true
+		);
+		wp_set_script_translations(
+			'spreadshopAdminCardFields',
+			'spreadshop',
+			plugin_dir_path( SPREADSHOP_FILE ) . 'languages'
+		);
 	}
 }

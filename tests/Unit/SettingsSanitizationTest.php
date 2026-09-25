@@ -133,7 +133,7 @@ class SettingsSanitizationTest extends PluginTestCase {
 		$sanitizers = $method->invoke( null );
 
 		$this->assertSame(
-			\Spreadshop\Constants::SPREADSHOP_OPTIONS,
+			array_merge( \Spreadshop\Constants::SPREADSHOP_OPTIONS, \Spreadshop\Constants::SPREADSHOP_LAYOUT_OPTIONS ),
 			array_keys( $sanitizers ),
 			'an option without a sanitiser can be written raw through options.php'
 		);

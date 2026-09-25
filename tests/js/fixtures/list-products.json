@@ -1,0 +1,1730 @@
+{
+  "articles": [
+    {
+      "id": "69cbe1683105e74fbea53fcb",
+      "name": "Abgeknickt - Stanley/Stella Unisex Bio-T-Shirt CREATOR ",
+      "priceFormatted": "34,49 €",
+      "shopOwnerPriceFormatted": "28,99 €",
+      "designId": "357665492",
+      "productTypeId": "1265",
+      "viewId": "2",
+      "appearanceId": "1",
+      "excludedAppearanceIds": [
+        "1481",
+        "270",
+        "482",
+        "196",
+        "251",
+        "1468",
+        "1523",
+        "2",
+        "1467",
+        "1478",
+        "741",
+        "950",
+        "742",
+        "1035",
+        "1189",
+        "899",
+        "989",
+        "968",
+        "939"
+      ],
+      "displayEmbroideryBadge": false,
+      "imageUrl": "https://image.spreadshirtmedia.net/image-server/v1/products/T1265A1PA8147PT17X257Y48D357665805W8881H8304PA8148PT17X45Y3D357665492W29052H40804/views/2,width=500,height=500,appearanceId=1/abgeknickt-stanleystella-unisex-bio-t-shirt-creator.jpg",
+      "hoverImageUrl": "https://image.spreadshirtmedia.net/image-server/v1/compositions/T1265A1PA8147PT17X257Y48D357665805W8881H8304PA8148PT17X45Y3D357665492W29052H40804/views/2,width=500,height=500,appearanceId=1/abgeknickt-stanleystella-unisex-bio-t-shirt-creator.jpg",
+      "altText": "Abgeknickt - Stanley/Stella Unisex Bio-T-Shirt CREATOR ",
+      "linkToken": "/abgeknickt-A69cbe1683105e74fbea53fcb?productType=1265&sellable=eNQr91YvrwTdV09qrREO-1265-7&appearance=1",
+      "pureArticleName": "Abgeknickt"
+    },
+    {
+      "id": "68f738c79dc7e318812830d4",
+      "name": "StMu STICK - Stanley/Stella Unisex Bio-T-Shirt CREATOR ",
+      "priceFormatted": "28,49 €",
+      "shopOwnerPriceFormatted": "22,99 €",
+      "designId": "352550115",
+      "productTypeId": "1265",
+      "viewId": "1",
+      "appearanceId": "2",
+      "excludedAppearanceIds": ["1", "805", "361"],
+      "displayEmbroideryBadge": true,
+      "imageUrl": "https://image.spreadshirtmedia.net/image-server/v1/products/T1265A2PA8147PT34X260Y73D352550115W5206H4995CxE5E1E6%3Ax00A7B5/views/1,width=500,height=500,appearanceId=2/stmu-stick-stanleystella-unisex-bio-t-shirt-creator.jpg",
+      "hoverImageUrl": "https://image.spreadshirtmedia.net/image-server/v1/compositions/T1265A2PA8147PT34X260Y73D352550115W5206H4995CxE5E1E6%3Ax00A7B5/views/1,width=500,height=500,appearanceId=2/stmu-stick-stanleystella-unisex-bio-t-shirt-creator.jpg",
+      "altText": "StMu STICK - Stanley/Stella Unisex Bio-T-Shirt CREATOR ",
+      "linkToken": "/stmu+stick-A68f738c79dc7e318812830d4?productType=1265&sellable=pNyxy3Vd11h0ZAMkVOYb-1265-7&appearance=2",
+      "pureArticleName": "StMu STICK"
+    },
+    {
+      "id": "69cbe1683105e74fbea53fcb",
+      "name": "Abgeknickt - Stanley/Stella Unisex Bio-Hoodie CRUISER ",
+      "priceFormatted": "65,99 €",
+      "shopOwnerPriceFormatted": "55,99 €",
+      "designId": "357665492",
+      "productTypeId": "2091",
+      "viewId": "2",
+      "appearanceId": "1",
+      "excludedAppearanceIds": [
+        "692",
+        "153",
+        "1524",
+        "1523",
+        "2",
+        "354",
+        "1478",
+        "1224",
+        "1189",
+        "248",
+        "843",
+        "205",
+        "988",
+        "946",
+        "1409",
+        "938",
+        "949",
+        "708"
+      ],
+      "displayEmbroideryBadge": false,
+      "imageUrl": "https://image.spreadshirtmedia.net/image-server/v1/products/T2091A1PA8138PT17X45Y0D357665492W29042H40790PA8171PT17X259Y41D357665805W8895H8317/views/2,width=500,height=500,appearanceId=1/abgeknickt-stanleystella-unisex-bio-hoodie-cruiser.jpg",
+      "hoverImageUrl": "https://image.spreadshirtmedia.net/image-server/v1/compositions/T2091A1PA8138PT17X45Y0D357665492W29042H40790PA8171PT17X259Y41D357665805W8895H8317/views/2,width=500,height=500,appearanceId=1/abgeknickt-stanleystella-unisex-bio-hoodie-cruiser.jpg",
+      "altText": "Abgeknickt - Stanley/Stella Unisex Bio-Hoodie CRUISER ",
+      "linkToken": "/abgeknickt-A69cbe1683105e74fbea53fcb?productType=2091&sellable=eNQr91YvrwTdV09qrREO-2091-22&appearance=1",
+      "pureArticleName": "Abgeknickt"
+    }
+  ],
+  "productTypes": {
+    "1265": {
+      "inStock": true,
+      "appearances": [
+        {
+          "id": "482",
+          "name": "Navy",
+          "inStock": true,
+          "colors": ["#353D4D"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "741",
+          "name": "Burgunderrot",
+          "inStock": true,
+          "colors": ["#761F32"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "742",
+          "name": "Anthrazit",
+          "inStock": true,
+          "colors": ["#5F5F5F"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "899",
+          "name": "Dunkelbraun",
+          "inStock": true,
+          "colors": ["#796651"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "939",
+          "name": "Dunkelblau meliert",
+          "inStock": true,
+          "colors": ["#48576E"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "950",
+          "name": "Dunkelblau",
+          "inStock": true,
+          "colors": ["#254E98"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "989",
+          "name": "Spektralgelb",
+          "inStock": true,
+          "colors": ["#EFB60D"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1035",
+          "name": "Karamell ",
+          "inStock": true,
+          "colors": ["#D2AD83"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1189",
+          "name": "Dunkles Petrol",
+          "inStock": true,
+          "colors": ["#48646B"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1467",
+          "name": "Poolblau",
+          "inStock": true,
+          "colors": ["#89DBD8"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1468",
+          "name": "Achtsames Blau",
+          "inStock": true,
+          "colors": ["#4C74B4"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1478",
+          "name": "Lila Traum",
+          "inStock": true,
+          "colors": ["#DA95A3"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1481",
+          "name": "Aquablau",
+          "inStock": true,
+          "colors": ["#3FAFD3"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1523",
+          "name": "Gelb Viva ",
+          "inStock": true,
+          "colors": ["#F6E095"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "name": "Weiß",
+          "inStock": true,
+          "colors": ["#FFFFFF"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "name": "Schwarz",
+          "inStock": true,
+          "colors": ["#000000"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "196",
+          "name": "Rot",
+          "inStock": true,
+          "colors": ["#D41C28"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "805",
+          "name": "Beige",
+          "inStock": true,
+          "colors": ["#E0D6C5"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "251",
+          "name": "Grau meliert",
+          "inStock": true,
+          "colors": ["#BEBEBE"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": false
+            }
+          ]
+        },
+        {
+          "id": "968",
+          "name": "Pink",
+          "inStock": true,
+          "colors": ["#F092B3"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "270",
+          "name": "Pfirsich",
+          "inStock": true,
+          "colors": ["#F8CAA6"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "361",
+          "name": "Naturweiß ",
+          "inStock": true,
+          "colors": ["#F8F6EF"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        }
+      ]
+    },
+    "2091": {
+      "inStock": true,
+      "appearances": [
+        {
+          "id": "397",
+          "name": "Beige meliert",
+          "inStock": true,
+          "colors": ["#ECE7DC"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "692",
+          "name": "Hellgrau marmoriert",
+          "inStock": true,
+          "colors": ["#898989"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "708",
+          "name": "Maroon",
+          "inStock": true,
+          "colors": ["#5E1D33"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "843",
+          "name": "Tanngrün",
+          "inStock": true,
+          "colors": ["#5E8D7D"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "938",
+          "name": "Navy",
+          "inStock": true,
+          "colors": ["#1F2B3A"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "946",
+          "name": "Blau",
+          "inStock": true,
+          "colors": ["#6186C4"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "949",
+          "name": "Ocker",
+          "inStock": true,
+          "colors": ["#C69A30"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1189",
+          "name": "Dunkles Petrol",
+          "inStock": true,
+          "colors": ["#48646B"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1224",
+          "name": "Karamell ",
+          "inStock": true,
+          "colors": ["#A1764B"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1409",
+          "name": "Terrakotta",
+          "inStock": true,
+          "colors": ["#AC5442"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1478",
+          "name": "Lila Traum",
+          "inStock": true,
+          "colors": ["#DA95A3"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1523",
+          "name": "Gelb Viva ",
+          "inStock": true,
+          "colors": ["#F6E095"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1524",
+          "name": "Purple Love ",
+          "inStock": true,
+          "colors": ["#55439A"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "name": "Weiß",
+          "inStock": true,
+          "colors": ["#FFFFFF"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "name": "Schwarz",
+          "inStock": true,
+          "colors": ["#000000"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "805",
+          "name": "Beige",
+          "inStock": true,
+          "colors": ["#E0D6C5"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "231",
+          "name": "Grau meliert",
+          "inStock": true,
+          "colors": ["#BEBEBE"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "248",
+          "name": "Khaki Grün",
+          "inStock": true,
+          "colors": ["#717250"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "153",
+          "name": "Forest",
+          "inStock": true,
+          "colors": ["#3D5F5C"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "988",
+          "name": "Hellrosa",
+          "inStock": true,
+          "colors": ["#F4CED4"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "205",
+          "name": "Indigoblau",
+          "inStock": true,
+          "colors": ["#5B6178"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "354",
+          "name": "Hellrot",
+          "inStock": true,
+          "colors": ["#FF785D"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": false
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "361",
+          "name": "Naturweiß ",
+          "inStock": true,
+          "colors": ["#F8F6EF"],
+          "sizes": [
+            {
+              "name": "XS",
+              "inStock": true
+            },
+            {
+              "name": "S",
+              "inStock": true
+            },
+            {
+              "name": "M",
+              "inStock": true
+            },
+            {
+              "name": "L",
+              "inStock": true
+            },
+            {
+              "name": "XL",
+              "inStock": true
+            },
+            {
+              "name": "XXL",
+              "inStock": true
+            },
+            {
+              "name": "3XL",
+              "inStock": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "page": 1,
+  "numberOfPages": 2,
+  "designBased": false,
+  "headline": "Frauen"
+}

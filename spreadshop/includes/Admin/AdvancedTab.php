@@ -162,10 +162,15 @@ class AdvancedTab {
 							<p class="description">
 								<?php esc_html_e( 'Check this option to avoid a second separate burger-menu from showing up on your page if your site already uses one.', 'spreadshop' ); ?>
 							</p>
+							<p class="description">
+								<?php esc_html_e( 'With Sidebar navigation on, the shop shows the Categories button instead; unchecked, it shows its own burger menu.', 'spreadshop' ); ?>
+							</p>
 						</td>
 					</tr>
 					</tbody>
 				</table>
+
+				<?php LayoutSection::render(); ?>
 
 				<h2><?php esc_html_e( 'Alternative slug-based integration', 'spreadshop' ); ?></h2>
 				<p>
@@ -256,5 +261,6 @@ class AdvancedTab {
 		update_option( 'spreadshopSwipeMenu', $swipeMenu );
 		update_option( 'spreadshopLoadFonts', $loadFonts );
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
+		LayoutSection::handleUpdate();
 	}
 }

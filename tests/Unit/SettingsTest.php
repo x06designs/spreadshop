@@ -63,17 +63,61 @@ class SettingsTest extends PluginTestCase {
 	 * @return void
 	 */
 	public function testDeleteAllRemovesEveryOwnedOption() {
-		$deleted = array();
+		$deleted = $this->recordDeletions();
+
+		Settings::deleteAll();
+
+		$this->assertSame(
+			array_merge( Constants::SPREADSHOP_OPTIONS, Constants::SPREADSHOP_LAYOUT_OPTIONS ),
+			$deleted->getArrayCopy()
+		);
+	}
+
+	/**
+	 * Disconnecting drops the shop but keeps how the site presents one.
+	 *
+	 * @return void
+	 */
+	public function testDeleteConnectionKeepsTheLayoutOptions() {
+		$deleted = $this->recordDeletions();
+
+		Settings::deleteConnection();
+
+		$this->assertSame( Constants::SPREADSHOP_OPTIONS, $deleted->getArrayCopy() );
+	}
+
+	/**
+	 * Uninstall goes through the global shim, and has to reach the full wipe.
+	 *
+	 * The shim lives in the bootstrap file, which the unit suite cannot load without booting
+	 * the plugin a second time, so its body is read instead.
+	 *
+	 * @return void
+	 */
+	public function testTheUninstallShimCallsTheFullWipe() {
+		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Reading a local source file.
+		$bootstrap = (string) file_get_contents( SPREADSHOP_FILE );
+
+		$this->assertMatchesRegularExpression(
+			'/function spreadshopDeleteSettings\(\)\s*\{\s*\\\\Spreadshop\\\\Settings::deleteAll\(\);\s*\}/',
+			$bootstrap
+		);
+	}
+
+	/**
+	 * Captures every delete_option() call.
+	 *
+	 * @return \ArrayObject<int, string>
+	 */
+	private function recordDeletions() {
+		$deleted = new \ArrayObject();
 		Functions\when( 'delete_option' )->alias(
-			static function ( $name ) use ( &$deleted ) {
+			static function ( $name ) use ( $deleted ) {
 				$deleted[] = $name;
 				return true;
 			}
 		);
-
-		Settings::deleteAll();
-
-		$this->assertSame( Constants::SPREADSHOP_OPTIONS, $deleted );
+		return $deleted;
 	}
 
 	/**
@@ -92,7 +136,10 @@ class SettingsTest extends PluginTestCase {
 
 		Settings::registerAll();
 
-		$this->assertSame( Constants::SPREADSHOP_OPTIONS, array_keys( $registered ) );
+		$this->assertSame(
+			array_merge( Constants::SPREADSHOP_OPTIONS, Constants::SPREADSHOP_LAYOUT_OPTIONS ),
+			array_keys( $registered )
+		);
 		$this->assertSame(
 			array( Constants::SPREADSHOP_SETTINGS_GROUP ),
 			array_values( array_unique( $registered ) )
@@ -122,5 +169,26 @@ class SettingsTest extends PluginTestCase {
 			),
 			Constants::SPREADSHOP_OPTIONS
 		);
+		$this->assertSame(
+			array(
+				'spreadshopLayoutSidebar',
+				'spreadshopLayoutCompactFooter',
+				'spreadshopLayoutCards',
+				'spreadshopLayoutProductPage',
+				'spreadshopCardFields',
+				'spreadshopStartList',
+				'spreadshopColors',
+			),
+			Constants::SPREADSHOP_LAYOUT_OPTIONS
+		);
+	}
+
+	/**
+	 * The layout options and the schema that defines them list the same names.
+	 *
+	 * @return void
+	 */
+	public function testTheLayoutOptionsMatchTheSchema() {
+		$this->assertSame( Constants::SPREADSHOP_LAYOUT_OPTIONS, \Spreadshop\Layout\Schema::options() );
 	}
 }

@@ -48,4 +48,23 @@ class Constants {
 		'spreadshopLocale',
 		'spreadshopLoadFonts',
 	);
+
+	/**
+	 * The layout options, defined by schema/layout.schema.json.
+	 *
+	 * Kept apart from SPREADSHOP_OPTIONS because they describe the site rather than the linked
+	 * shop: disconnecting a shop drops the connection, not how the site presents a shop. The
+	 * same compatibility contract applies to the names.
+	 *
+	 * @var string[]
+	 */
+	const SPREADSHOP_LAYOUT_OPTIONS = array(
+		'spreadshopLayoutSidebar',
+		'spreadshopLayoutCompactFooter',
+		'spreadshopLayoutCards',
+		'spreadshopLayoutProductPage',
+		'spreadshopCardFields',
+		'spreadshopStartList',
+		'spreadshopColors',
+	);
 }

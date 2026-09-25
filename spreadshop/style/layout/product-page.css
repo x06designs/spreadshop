@@ -1,0 +1,189 @@
+/*
+ * Product page: the suggestions, the product details and the design block become separate
+ * sections under a rule. The product-view gallery inside the details repeats the images at the
+ * top of the page and is hidden; design, tags and sharing sit on one grid.
+ */
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-suggestions,
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-product-type,
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-columns {
+  margin: clamp(48px, 6vw, 80px) 0 0;
+  border-top: 2px solid var(--_spreadshop-text);
+  padding-top: clamp(24px, 3vw, 36px);
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-suggestions__caption,
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-product-type__heading,
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-column__caption {
+  margin: 0 0 20px;
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.1;
+  font-family: var(--spreadshop-font-display, inherit);
+  font-weight: 700;
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-product-type__column__wide {
+  display: none;
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-product-type__container {
+  gap: 32px;
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-columns {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 24px 48px;
+  display: grid;
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-column {
+  margin: 0;
+}
+
+.spreadshop-layout--product-page
+  #myShop
+  .SprdMain
+  .sprd-detail-columns
+  > .sprd-detail-column:first-child {
+  grid-row: span 2;
+}
+
+.spreadshop-layout--product-page
+  #myShop
+  .SprdMain
+  .sprd-detail-columns
+  .sprd-detail-column__caption {
+  font-size: 20px;
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-design__tag {
+  align-items: center;
+  display: inline-flex;
+  margin: 0 6px 8px 0;
+  border: 1.5px solid var(--_spreadshop-border);
+  height: auto;
+  padding: 4px 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  text-decoration: none;
+  color: var(--_spreadshop-text);
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-design__tag:hover {
+  border-color: var(--_spreadshop-text);
+  color: var(--_spreadshop-hover);
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-social__bar {
+  gap: 12px;
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-social__share-btn {
+  place-items: center;
+  display: grid;
+  margin: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.spreadshop-layout--product-page
+  #myShop
+  .SprdMain
+  .sprd-detail-social__share-btn:is(:hover, :focus-visible) {
+  background-color: color-mix(in oklch, var(--_spreadshop-text) 10%, transparent);
+  color: var(--_spreadshop-hover);
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-social__share-btn-icon {
+  width: 22px;
+  height: 22px;
+}
+
+@media (max-width: 767px) {
+  .spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .spreadshop-layout--product-page
+    #myShop
+    .SprdMain
+    .sprd-detail-columns
+    > .sprd-detail-column:first-child {
+    grid-row: auto;
+  }
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .sprd-detail-sizes__size--stockout,
+.spreadshop-layout--product-page
+  #myShop
+  .SprdMain
+  .sprd-detail-product-type__size-table-row--stockout {
+  opacity: 1;
+  border-style: dashed;
+  text-decoration: line-through;
+  color: var(--_spreadshop-muted);
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain [data-spreadshop-tabs] {
+  flex-direction: column;
+  gap: 24px;
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .spreadshop-tabs {
+  gap: 4px;
+  order: -1;
+  display: flex;
+  border-bottom: 2px solid var(--_spreadshop-border);
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .spreadshop-tabs__tab {
+  margin: 0 0 -2px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  padding: 10px 16px;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--_spreadshop-muted);
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .spreadshop-tabs__tab:is(:hover, :focus) {
+  background: none;
+  color: var(--_spreadshop-text);
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain .spreadshop-tabs__tab[aria-selected="true"] {
+  border-bottom-color: var(--_spreadshop-text);
+  color: var(--_spreadshop-text);
+}
+
+.spreadshop-layout--product-page
+  #myShop
+  .SprdMain
+  [data-spreadshop-tabs]
+  > .sprd-detail-product-type__column {
+  border: 0;
+}
+
+.spreadshop-layout--product-page
+  #myShop
+  .SprdMain
+  [data-spreadshop-tabs]
+  .sprd-detail-product-type__sub-heading {
+  display: none;
+}
+
+.spreadshop-layout--product-page
+  #myShop
+  .SprdMain
+  [data-spreadshop-tabs]
+  .sprd-detail-product-type__sub-container {
+  display: block;
+}
+
+.spreadshop-layout--product-page #myShop .SprdMain [data-spreadshop-tab-hidden] {
+  display: none;
+}

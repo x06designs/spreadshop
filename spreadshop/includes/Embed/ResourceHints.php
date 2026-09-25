@@ -8,7 +8,6 @@
 namespace Spreadshop\Embed;
 
 use Spreadshop\Platform;
-use Spreadshop\Settings;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -45,7 +44,7 @@ class ResourceHints {
 	 * @return string[]
 	 */
 	public static function filter( $hints, $relationType ) {
-		if ( ! self::shopWillRender() ) {
+		if ( ! EmbedDetector::willRender() ) {
 			return $hints;
 		}
 
@@ -61,32 +60,6 @@ class ResourceHints {
 		}
 
 		return $hints;
-	}
-
-	/**
-	 * Whether this request is going to embed the shop.
-	 *
-	 * Guessing wrong in either direction has a cost: a missing hint gives up the head start,
-	 * and a hint on a page with no shop opens a connection nothing uses.
-	 *
-	 * @return bool
-	 */
-	private static function shopWillRender() {
-		if ( ! Settings::isConnected() ) {
-			return false;
-		}
-
-		if ( SlugRoute::ownsCurrentRequest() ) {
-			return true;
-		}
-
-		if ( ! is_singular() ) {
-			return false;
-		}
-
-		$post = get_post();
-
-		return $post instanceof \WP_Post && has_shortcode( $post->post_content, 'spreadshop' );
 	}
 
 	/**
