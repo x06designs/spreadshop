@@ -169,6 +169,17 @@ affiliated with, or supported by sprd.net AG or IronShark GmbH.
 
 ## Changelog
 
+### 1.9.0
+* Layout options on the Advanced tab: sidebar navigation, compact footer, product cards and product page, each off by default and independent of the others
+* Product cards show the product name, and optionally product type, price, colour swatches, sizes and a second image on hover, taken from the shop's own list data
+* The sidebar's category tree folds per department; on small screens a "Categories" button opens it
+* Description and size guide on the product page become keyboard-accessible tabs
+* Colour settings, and CSS custom properties a theme can set, adapt the shop to the site's palette
+* Start page option: open the shop on its design list or on all products
+* Accessibility: product tiles are announced as links with the product name; search, basket (with item count) and the filter dialog's close button get names in the site language; Escape closes the filter dialog; sold-out sizes are marked as disabled; buttons stay readable under themes that restyle every button on hover
+* The shop's wrapper no longer adds a second `main` landmark to the page
+* WordPress notices on the settings screen appear above the settings again instead of in the middle of them
+
 ### 1.8.1
 * Hardening: every setting is now cleaned on the way in whichever route wrote it. Registering an option also exposes it to WordPress's own settings handler, which does not pass through this plugin's forms, so their validation did not run on that path. A stored shop ID decides which host the shop is loaded from, so this matters most there
 * The connection test re-checks the stored shop details before contacting Spreadshirt rather than trusting what it reads back

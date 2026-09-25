@@ -3,7 +3,7 @@
 # This file is distributed under the same licence as the Spreadshop plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Spreadshop 1.8.1\n"
+"Project-Id-Version: Spreadshop 1.9.0\n"
 "Report-Msgid-Bugs-To: https://github.com/x06designs/spreadshop/issues\n"
 "POT-Creation-Date: 2026-09-25 00:00+0000\n"
 "PO-Revision-Date: 2026-09-25 00:00+0000\n"
