@@ -87,12 +87,18 @@ No visitor action is required and the plugin asks for no consent of its own. The
 contacted:
 
 - `<shop>.myspreadshop.net` (or `.com` on the North American platform) — shop client, styles, shop data
+- your shop's own address, e.g. `<name>.myspreadshop.de` — the product lists the shop shows
 - `image.spreadshirtmedia.net` — product and design images
 - `www.spreadshirt.net` — Spreadshirt's own cookie-consent script
 
 Each request discloses the visitor's IP address and user agent to Spreadshirt. Spreadshirt
 sets a `sprdConsent` cookie and shows its own consent banner inside the shop, defaulting to
 necessary-only until the visitor chooses.
+
+With the **Product cards** layout option on, the plugin reads each product list the shop has
+just loaded once more, from the same host and without cookies, to add names and prices to the
+tiles; the second image on hover comes from `image.spreadshirtmedia.net`. That adds no host
+to the list above.
 
 The plugin itself sets no cookies, uses no local storage, and loads nothing from Google.
 
