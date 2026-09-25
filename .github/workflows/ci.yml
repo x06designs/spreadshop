@@ -88,6 +88,43 @@ jobs:
       # and in this workflow.
       - run: composer audit
 
+  i18n:
+    name: Translations
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+          tools: composer
+
+      - uses: ramsey/composer-install@v4
+
+      # Fails when the .pot, the .po merge or any compiled file is stale, or a string is
+      # untranslated.
+      - run: composer i18n:check
+
+  javascript:
+    name: JavaScript checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+
+      - run: npm ci
+
+      # Biome, type-checked JS, the DOM-sink gate and the node:test suite.
+      - run: npm run check
+
+      # Same reasoning as composer audit: dev-only, but it runs here and on every machine.
+      - run: npm audit --audit-level=low
+
   package:
     name: Build the release artifact
     runs-on: ubuntu-latest

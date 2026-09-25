@@ -1,0 +1,30 @@
+{
+  "name": "spreadshop-dev",
+  "private": true,
+  "description": "Development tooling for the Spreadshop WordPress plugin fork. The shippable plugin is the spreadshop/ directory; nothing here is distributed with it.",
+  "license": "GPL-2.0-or-later",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "lint": "biome check --error-on-warnings",
+    "fix": "biome check --write",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --test \"tests/js/**/*.test.js\"",
+    "gate:sinks": "node scripts/check-dom-sinks.js",
+    "check": "npm run lint && npm run typecheck && npm run gate:sinks && npm run gate:drift && npm test",
+    "gen:types": "node scripts/gen-types.js",
+    "gate:drift": "node scripts/gen-types.js --check",
+    "e2e": "playwright test --project=fixture-desktop --project=fixture-mobile --project=live-desktop --project=live-mobile",
+    "smoke": "playwright test --project=smoke"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.14",
+    "@playwright/test": "1.63.0",
+    "@types/node": "24.13.6",
+    "@wordpress/i18n": "6.29.0",
+    "json-schema-to-typescript": "16.0.0",
+    "typescript": "7.0.2"
+  }
+}
