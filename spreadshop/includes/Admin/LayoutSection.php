@@ -107,10 +107,11 @@ class LayoutSection {
 	 *
 	 * @return array<string, string>
 	 */
-	private static function colorLabels() {
+	public static function colorLabels() {
 		return array(
 			'accent'     => __( 'Accent', 'spreadshop' ),
 			'accentText' => __( 'Text on accent', 'spreadshop' ),
+			'hover'      => __( 'Hover', 'spreadshop' ),
 			'background' => __( 'Background', 'spreadshop' ),
 			'text'       => __( 'Text', 'spreadshop' ),
 			'muted'      => __( 'Secondary text', 'spreadshop' ),

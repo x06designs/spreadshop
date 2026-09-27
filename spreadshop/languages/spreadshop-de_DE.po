@@ -3,7 +3,7 @@
 # This file is distributed under the same licence as the Spreadshop plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Spreadshop 1.9.0\n"
+"Project-Id-Version: Spreadshop 1.9.1\n"
 "Report-Msgid-Bugs-To: https://github.com/x06designs/spreadshop/issues\n"
 "POT-Creation-Date: 2026-09-25 00:00+0000\n"
 "PO-Revision-Date: 2026-09-25 00:00+0000\n"
@@ -398,17 +398,17 @@ msgid "Separates the sections of the product page, shows description and size gu
 msgstr "Trennt die Bereiche der Produktseite, zeigt Beschreibung und Größenhinweis als Tabs und ordnet Motiv, Tags und Teilen neu."
 
 #: includes/Admin/LayoutSection.php:46
-#: includes/Admin/LayoutSection.php:164
+#: includes/Admin/LayoutSection.php:165
 msgid "Card fields"
 msgstr "Kartenfelder"
 
 #: includes/Admin/LayoutSection.php:50
-#: includes/Admin/LayoutSection.php:197
+#: includes/Admin/LayoutSection.php:198
 msgid "Start page"
 msgstr "Startseite"
 
 #: includes/Admin/LayoutSection.php:54
-#: includes/Admin/LayoutSection.php:220
+#: includes/Admin/LayoutSection.php:221
 msgid "Colours"
 msgstr "Farben"
 
@@ -442,38 +442,42 @@ msgid "Text on accent"
 msgstr "Text auf Akzent"
 
 #: includes/Admin/LayoutSection.php:114
+msgid "Hover"
+msgstr "Hover"
+
+#: includes/Admin/LayoutSection.php:115
 msgid "Background"
 msgstr "Hintergrund"
 
-#: includes/Admin/LayoutSection.php:115
+#: includes/Admin/LayoutSection.php:116
 msgid "Text"
 msgstr "Text"
 
-#: includes/Admin/LayoutSection.php:116
+#: includes/Admin/LayoutSection.php:117
 msgid "Secondary text"
 msgstr "Sekundärtext"
 
-#: includes/Admin/LayoutSection.php:117
+#: includes/Admin/LayoutSection.php:118
 msgid "Lines"
 msgstr "Linien"
 
-#: includes/Admin/LayoutSection.php:180
+#: includes/Admin/LayoutSection.php:181
 msgid "Used when Product cards is on. The product name is always shown first; the other fields follow in the order chosen here."
 msgstr "Gilt, wenn Produktkarten an ist. Der Produktname steht immer zuerst; die übrigen Felder folgen in der hier gewählten Reihenfolge."
 
-#: includes/Admin/LayoutSection.php:192
+#: includes/Admin/LayoutSection.php:193
 msgid "Designs (the shop default)"
 msgstr "Designs (Standard des Shops)"
 
-#: includes/Admin/LayoutSection.php:193
+#: includes/Admin/LayoutSection.php:194
 msgid "All products"
 msgstr "Alle Produkte"
 
-#: includes/Admin/LayoutSection.php:207
+#: includes/Admin/LayoutSection.php:208
 msgid "A Start Token above, or a deeplink= parameter on the short code, takes precedence."
 msgstr "Ein Start-Token oben oder ein deeplink=-Parameter am Shortcode hat Vorrang."
 
-#: includes/Admin/LayoutSection.php:232
+#: includes/Admin/LayoutSection.php:233
 msgid "Leave a colour empty to use your theme's. A theme can also set these as CSS custom properties, such as --spreadshop-accent; a colour chosen here overrides the theme. The colours apply once at least one layout option is on."
 msgstr "Lass eine Farbe leer, um die deines Themes zu verwenden. Ein Theme kann diese Farben auch als CSS Custom Properties setzen, etwa --spreadshop-accent; eine hier gewählte Farbe hat Vorrang vor dem Theme. Die Farben wirken, sobald mindestens eine Layout-Option an ist."
 

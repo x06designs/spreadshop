@@ -78,12 +78,12 @@ switching one off restores the shop exactly as Spreadshirt draws it.
 | Product page | Separates the product page's sections, shows description and size guide as tabs, tidies the design, tags and sharing block |
 | Card fields | Which fields a card shows, and in which order |
 | Start page | Open on the design list (the shop default) or on all products |
-| Colours | Accent, text, background and lines. Empty means "use the theme's" |
+| Colours | Accent, hover, text, background and lines. Empty means "use the theme's" |
 
 A theme can set the same colours as CSS custom properties, which a colour chosen here
-overrides: `--spreadshop-accent`, `--spreadshop-accent-text`, `--spreadshop-background`,
-`--spreadshop-text`, `--spreadshop-muted`, `--spreadshop-border`, plus `--spreadshop-hover`,
-`--spreadshop-badge`, `--spreadshop-badge-text`, `--spreadshop-focus`,
+overrides: `--spreadshop-accent`, `--spreadshop-accent-text`, `--spreadshop-hover`,
+`--spreadshop-background`, `--spreadshop-text`, `--spreadshop-muted`, `--spreadshop-border`,
+plus `--spreadshop-badge`, `--spreadshop-badge-text`, `--spreadshop-focus`,
 `--spreadshop-font-display`, `--spreadshop-sticky-offset` and `--spreadshop-sidebar-width`.
 
 The layout options restyle markup Spreadshirt does not document. If a Spreadshirt release
@@ -168,6 +168,9 @@ affiliated with, or supported by sprd.net AG or IronShark GmbH.
 ---
 
 ## Changelog
+
+### 1.9.1
+* Hover colour setting: the colour of links and buttons under the pointer in the shop can now be chosen with the other colours instead of only from the theme
 
 ### 1.9.0
 * Layout options on the Advanced tab: sidebar navigation, compact footer, product cards and product page, each off by default and independent of the others

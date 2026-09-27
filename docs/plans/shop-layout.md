@@ -1,7 +1,7 @@
 # Shop layout integration — plan
 
-Status: **Goals confirmed (v3). Phases 1–5 done, phase 6 in progress.** Branch
-`feature/shop-layout` (from `develop`), nothing committed yet.
+Status: **Complete.** Phases 1 to 6 are done; released as 1.9.0 (tag `v1.9.0`, 2026-09-25).
+Branch `feature/shop-layout` merged into `develop` and `main`.
 
 Progress (2026-09-24):
 - Phase 1 done: npm root, Biome (`--error-on-warnings`), `tsc` checkJs, DOM-sink gate with
