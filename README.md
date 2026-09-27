@@ -169,6 +169,9 @@ affiliated with, or supported by sprd.net AG or IronShark GmbH.
 
 ## Changelog
 
+### 1.9.1
+* Hover colour setting: the colour of links and buttons under the pointer in the shop can now be chosen with the other colours instead of only from the theme
+
 ### 1.9.0
 * Layout options on the Advanced tab: sidebar navigation, compact footer, product cards and product page, each off by default and independent of the others
 * Product cards show the product name, and optionally product type, price, colour swatches, sizes and a second image on hover, taken from the shop's own list data
