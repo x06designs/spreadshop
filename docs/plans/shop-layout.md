@@ -110,8 +110,9 @@ Progress (2026-09-24):
     real field would need JS driving the client). Active nav items keep their inset on hover;
     tag chips centred (the client fixes `.sprd-link` at 1.6em); share buttons get a round hover.
   - dejok must map `--spreadshop-hover` to its teal-deep: magenta text on paper is ~2.3:1.
-- Unverified: whether the client accepts `?listModeOverride=PRODUCT` as `startToken` in the
-  config object (verified only as a hash route).
+- Verified (2026-09-27, 1.9.1 on dejok): the client accepts `?listModeOverride=PRODUCT` as
+  `startToken` in the config object. It requests `shopData/list?…&listModeOverride=PRODUCT`, the
+  heading reads "Alle Produkte", and the URL hash stays `#!/`.
 
 Goals-gate decisions: lint/type gates use public `@biomejs/biome` + `typescript` with in-repo
 configs written to the house conventions (the `@alchemisten/*` configs are restricted and
