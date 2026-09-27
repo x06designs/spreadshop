@@ -61,6 +61,7 @@
       "properties": {
         "accent": { "type": "string", "pattern": "^#[0-9a-f]{6}$" },
         "accentText": { "type": "string", "pattern": "^#[0-9a-f]{6}$" },
+        "hover": { "type": "string", "pattern": "^#[0-9a-f]{6}$" },
         "background": { "type": "string", "pattern": "^#[0-9a-f]{6}$" },
         "text": { "type": "string", "pattern": "^#[0-9a-f]{6}$" },
         "muted": { "type": "string", "pattern": "^#[0-9a-f]{6}$" },

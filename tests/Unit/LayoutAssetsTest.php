@@ -11,6 +11,7 @@ use Brain\Monkey\Functions;
 use Spreadshop\Admin\LayoutSection;
 use Spreadshop\Embed\Renderer;
 use Spreadshop\Layout\Assets;
+use Spreadshop\Layout\Schema;
 use Spreadshop\Layout\Tokens;
 
 /**
@@ -345,6 +346,18 @@ class LayoutAssetsTest extends PluginTestCase {
 	}
 
 	/**
+	 * Every colour the schema allows has a field in the admin and a custom property, and nothing else does.
+	 *
+	 * @return void
+	 */
+	public function testEveryColourHasALabelAndAProperty() {
+		$keys = array_keys( Schema::keyPatterns( 'spreadshopColors' ) );
+
+		$this->assertSame( $keys, array_keys( LayoutSection::colorLabels() ) );
+		$this->assertSame( $keys, array_keys( Tokens::PROPERTIES ) );
+	}
+
+	/**
 	 * Chosen colours are printed on #myShop, under their custom property names.
 	 *
 	 * @return void
@@ -356,6 +369,7 @@ class LayoutAssetsTest extends PluginTestCase {
 				'spreadshopColors'      => array(
 					'accent'     => '#fc71f0',
 					'accentText' => '#0d130f',
+					'hover'      => '#016769',
 				),
 			)
 		);
@@ -363,7 +377,7 @@ class LayoutAssetsTest extends PluginTestCase {
 		Assets::enqueue();
 
 		$this->assertSame(
-			array( '#myShop{--spreadshop-accent:#fc71f0;--spreadshop-accent-text:#0d130f}' ),
+			array( '#myShop{--spreadshop-accent:#fc71f0;--spreadshop-accent-text:#0d130f;--spreadshop-hover:#016769}' ),
 			$this->inline['spreadshopLayoutTokens']
 		);
 	}

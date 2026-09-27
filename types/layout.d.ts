@@ -34,6 +34,7 @@ spreadshopStartList: ("designs" | "products")
 spreadshopColors: {
 accent?: string
 accentText?: string
+hover?: string
 background?: string
 text?: string
 muted?: string

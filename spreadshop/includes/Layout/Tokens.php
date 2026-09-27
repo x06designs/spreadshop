@@ -26,6 +26,7 @@ class Tokens {
 	const PROPERTIES = array(
 		'accent'     => '--spreadshop-accent',
 		'accentText' => '--spreadshop-accent-text',
+		'hover'      => '--spreadshop-hover',
 		'background' => '--spreadshop-background',
 		'text'       => '--spreadshop-text',
 		'muted'      => '--spreadshop-muted',
